@@ -1,0 +1,12 @@
+{
+  "REQUEST": {
+    "SERVICE": "subscription.create"
+  },
+  "RESPONSE": {
+    "STATUS": "success",
+    "SUBSCRIPTION_ID": 503772,
+    "HASH": "f0bd1772132b8711650ab2b8623bd575",
+    "INVOICE_ID": 845277,
+    "PAYPAL_URL": "https://app.monsum.com/paypal"
+  }
+}

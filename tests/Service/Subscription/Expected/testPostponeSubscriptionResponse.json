@@ -1,0 +1,12 @@
+{
+  "REQUEST": {
+    "SERVICE": "subscription.postpone",
+    "DATA": {
+      "SUBSCRIPTION_ID": "501982",
+      "MONTH": "06"
+    }
+  },
+  "RESPONSE": {
+    "STATUS": "success"
+  }
+}

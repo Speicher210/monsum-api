@@ -1,0 +1,7 @@
+{
+  "SERVICE": "coupon.check",
+  "DATA": {
+    "CODE": "424258989",
+    "ARTICLE_NUMBER": "MISSING_ARTICLE"
+  }
+}

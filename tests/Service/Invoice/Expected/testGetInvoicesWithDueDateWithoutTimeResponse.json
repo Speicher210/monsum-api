@@ -1,0 +1,84 @@
+{
+  "REQUEST": {
+    "SERVICE": "invoice.get",
+    "FILTER": [],
+    "LIMIT": 100
+  },
+  "RESPONSE": {
+    "INVOICES": [
+      {
+        "INVOICE_ID": "2345",
+        "STATUS": "canceled",
+        "TYPE": "outgoing",
+        "CUSTOMER_ID": "995256",
+        "CUSTOMER_NUMBER": "3",
+        "CUSTOMER_COSTCENTER_ID": "0",
+        "ORGANIZATION": "Tester 222",
+        "SALUTATION": "",
+        "FIRST_NAME": "Michael",
+        "LAST_NAME": "Wolf",
+        "ADDRESS": "Spaldingstrasse 210",
+        "ADDRESS_2": "",
+        "ZIPCODE": "20097",
+        "CITY": "Hamburg",
+        "COMMENT": "",
+        "PAYMENT_TYPE": "1",
+        "DAYS_FOR_PAYMENT": "14",
+        "BANK_NAME": null,
+        "BANK_ACCOUNT_NUMBER": null,
+        "BANK_CODE": null,
+        "BANK_ACCOUNT_OWNER": null,
+        "BANK_IBAN": null,
+        "BANK_BIC": null,
+        "AFFILIATE": null,
+        "COUNTRY_CODE": "DE",
+        "VAT_ID": "",
+        "CURRENCY_CODE": "EUR",
+        "TEMPLATE_ID": "1234",
+        "SUBSCRIPTION_ID": "333",
+        "SUBSCRIPTION_INVOICE_COUNTER": "1",
+        "INVOICE_NUMBER": "1",
+        "INVOICE_EXT_UID": "",
+        "INVOICE_TITLE": "",
+        "INTROTEXT": "",
+        "OUTSTANDING_AMOUNT": "0,00",
+        "PAID_DATE": "0000-00-00 00:00:00",
+        "IS_CANCELED": "1",
+        "INVOICE_DATE": "2015-10-22",
+        "DUE_DATE": "2015-11-04 23:00:00",
+        "DELIVERY_DATE": "22.10.2015 - 01.11.2015",
+        "CASH_DISCOUNT_PERCENT": "0.00",
+        "CASH_DISCOUNT_DAYS": "0",
+        "SUB_TOTAL": 8.1147541,
+        "VAT_TOTAL": 1.541803279,
+        "VAT_ITEMS": [
+          {
+            "VAT_PERCENT": "19.00",
+            "COMPLETE_NET": 8.1147541,
+            "VAT_VALUE": 1.541803279
+          }
+        ],
+        "ITEMS": [
+          {
+            "INVOICE_ITEM_ID": "1506250",
+            "ARTICLE_NUMBER": "11",
+            "DESCRIPTION": "Wingu Portal Zugang (6 Monate)<br>Hol Dir die 6 Monate Portalnutzung.",
+            "QUANTITY": "1.00",
+            "UNIT_PRICE": "8.11475410",
+            "VAT_PERCENT": "19.00",
+            "VAT_VALUE": 1.541803279,
+            "COMPLETE_NET": 8.1147541,
+            "COMPLETE_GROSS": 9.656557379,
+            "SORT_ORDER": 1
+          }
+        ],
+        "TOTAL": 9.656557379,
+        "PAYMENT_INFO": "",
+        "DOCUMENT_URL": "https://test.com/document",
+        "PAYPAL_URL": "https://test.com/paypal",
+        "SHIPMENTS": [],
+        "TRANSACTION_ID": ""
+      }
+    ]
+  }
+}

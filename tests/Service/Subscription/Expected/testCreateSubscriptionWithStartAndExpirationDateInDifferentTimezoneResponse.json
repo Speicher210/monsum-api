@@ -1,0 +1,11 @@
+{
+  "SERVICE": "subscription.create",
+  "DATA": {
+    "CUSTOMER_ID": 996423,
+    "START": "2016-05-20 09:20:30",
+    "NEXT_EVENT": "2016-06-20 02:30:45",
+    "CANCELLATION_DATE": "2016-06-20 03:30:45",
+    "X_ATTRIBUTES": [],
+    "ARTICLE_NUMBER": "60"
+  }
+}

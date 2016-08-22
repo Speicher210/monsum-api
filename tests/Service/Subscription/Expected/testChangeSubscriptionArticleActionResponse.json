@@ -1,0 +1,14 @@
+{
+  "REQUEST": {
+    "SERVICE": "subscription.changearticle",
+    "DATA": {
+      "SUBSCRIPTION_ID": "503772",
+      "ARTICLE_NUMBER": "666",
+      "FEATURES": []
+    }
+  },
+  "RESPONSE": {
+    "STATUS": "success",
+    "SUBSCRIPTION_ID": "503772"
+  }
+}

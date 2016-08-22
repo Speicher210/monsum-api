@@ -1,0 +1,11 @@
+{
+  "REQUEST": {
+    "SERVICE": "subscription.deleteusagedata",
+    "DATA": {
+      "USAGEDATA_ID": "223789"
+    }
+  },
+  "RESPONSE": {
+    "STATUS": "success"
+  }
+}

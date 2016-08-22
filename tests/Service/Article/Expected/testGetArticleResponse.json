@@ -1,0 +1,45 @@
+{
+  "REQUEST": {
+    "SERVICE": "article.get",
+    "FILTER": [],
+    "LIMIT": 1
+  },
+  "RESPONSE": {
+    "ARTICLES": [
+      {
+        "ARTICLE_NUMBER": "1",
+        "TITLE": "Article test",
+        "DESCRIPTION": "Article test description",
+        "TAGS": "tag1, tag2",
+        "UNIT_PRICE": "27.0000",
+        "SETUP_FEE": "83.0000",
+        "ALLOW_MULTIPLE": "1",
+        "IS_ADDON": "0",
+        "TRANSLATIONS": {
+          "EN": {
+            "DESCRIPTION": "Translation description",
+            "TITLE": "Translation title"
+          }
+        },
+        "CURRENCY_CODE": "EUR",
+        "VAT_PERCENT": "19.00",
+        "SUBSCRIPTION_INTERVAL": "1 month",
+        "SUBSCRIPTION_NUMBER_EVENTS": "0",
+        "SUBSCRIPTION_TRIAL": "2 day",
+        "SUBSCRIPTION_DURATION": "1 month",
+        "SUBSCRIPTION_DURATION_FOLLOW": "2 month",
+        "SUBSCRIPTION_CANCELLATION": "1 day",
+        "RETURN_URL_SUCCESS": "https://test.com/success",
+        "RETURN_URL_CANCEL": "https://test.com/cancel",
+        "CHECKOUT_URL": "https://app.monsum.com/purchase/aa9122707e4baf2090e23babe7473a79/1",
+        "FEATURES": [
+          {
+            "CODE": "code",
+            "QUANTITY": 2,
+            "VALUE": "value"
+          }
+        ]
+      }
+    ]
+  }
+}

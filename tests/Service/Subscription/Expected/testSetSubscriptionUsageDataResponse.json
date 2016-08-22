@@ -1,0 +1,9 @@
+{
+  "REQUEST": {
+    "SERVICE": "subscription.setusagedata"
+  },
+  "RESPONSE": {
+    "STATUS": "success",
+    "USAGEDATA_ID": "1"
+  }
+}

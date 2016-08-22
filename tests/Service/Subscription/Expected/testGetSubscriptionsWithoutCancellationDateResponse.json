@@ -1,0 +1,17 @@
+{
+  "REQUEST": {
+    "SERVICE": "subscription.get",
+    "FILTER": [],
+    "LIMIT": 100
+  },
+  "RESPONSE": {
+    "SUBSCRIPTIONS": [
+      {
+        "SUBSCRIPTION_ID": 501982,
+        "CUSTOMER_ID": 995443,
+        "SUBSCRIPTION_TITLE": "title",
+        "CANCELLATION_DATE": "0000-00-00 00:00:00"
+      }
+    ]
+  }
+}

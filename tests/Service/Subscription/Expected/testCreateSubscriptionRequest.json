@@ -1,0 +1,8 @@
+{
+  "SERVICE": "subscription.create",
+  "DATA": {
+    "CUSTOMER_ID": 996423,
+    "X_ATTRIBUTES": [],
+    "ARTICLE_NUMBER": "60"
+  }
+}

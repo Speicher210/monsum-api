@@ -1,0 +1,12 @@
+{
+  "REQUEST": {
+    "SERVICE": "customer.createsecurelink",
+    "DATA": {
+      "CUSTOMER_ID": "996423"
+    }
+  },
+  "RESPONSE": {
+    "ACCOUNTDATA_URL": "https://create-secure-link.test.com/account",
+    "DASHBOARD_URL": "https://create-secure-link.test.com/dashboard"
+  }
+}

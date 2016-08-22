@@ -1,0 +1,11 @@
+{
+  "REQUEST": {
+    "SERVICE": "subscription.renew",
+    "DATA": {
+      "SUBSCRIPTION_ID": "501982"
+    }
+  },
+  "RESPONSE": {
+    "STATUS": "success"
+  }
+}

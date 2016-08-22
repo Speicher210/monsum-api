@@ -1,0 +1,20 @@
+{
+  "REQUEST": {
+    "SERVICE": "customer.get",
+    "FILTER": {
+      "CUSTOMER_ID": 1
+    },
+    "LIMIT": 100
+  },
+  "RESPONSE": {
+    "CUSTOMERS": [
+      {
+        "CUSTOMER_ID": "1",
+        "CREATED": "",
+        "BANK_ACCOUNT_MANDATE_REFERENCE_DATE": "",
+        "BIRTHDAY": "",
+        "LASTUPDATE": ""
+      }
+    ]
+  }
+}

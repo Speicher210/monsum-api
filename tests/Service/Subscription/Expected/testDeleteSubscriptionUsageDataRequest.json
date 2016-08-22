@@ -1,0 +1,6 @@
+{
+  "SERVICE": "subscription.deleteusagedata",
+  "DATA": {
+    "USAGEDATA_ID": "223789"
+  }
+}

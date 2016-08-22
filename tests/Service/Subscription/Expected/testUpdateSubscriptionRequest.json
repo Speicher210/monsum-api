@@ -1,0 +1,8 @@
+{
+  "SERVICE": "subscription.update",
+  "DATA": {
+    "SUBSCRIPTION_ID": 503772,
+    "X_ATTRIBUTES": [],
+    "FEATURES": []
+  }
+}

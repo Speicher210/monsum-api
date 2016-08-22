@@ -1,0 +1,11 @@
+{
+  "REQUEST": {
+    "SERVICE": "subscription.reactivate",
+    "DATA": {
+      "SUBSCRIPTION_ID": "501982"
+    }
+  },
+  "RESPONSE": {
+    "STATUS": "success"
+  }
+}

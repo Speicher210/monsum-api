@@ -1,0 +1,28 @@
+{
+  "REQUEST": {
+    "SERVICE": "subscription.get",
+    "FILTER": {
+      "SUBSCRIPTION_ID": 123
+    },
+    "LIMIT": 100
+  },
+  "RESPONSE": {
+    "SUBSCRIPTIONS": [
+      {
+        "SUBSCRIPTION_ID": 123,
+        "CUSTOMER_ID": 321,
+        "SUBSCRIPTION_TITLE": "title",
+        "CANCELLATION_DATE": "2016-01-28 16:56:22",
+        "COUPON": {
+          "CODE": "TEST_COUPON",
+          "TITLE": "Coupony",
+          "DISCOUNT_PERIOD_UNIT": "event",
+          "DISCOUNT_PERIOD_AMOUNT": "3",
+          "USAGES_MAX": "1",
+          "SUBSCRIPTION_ID": "681288",
+          "PAYMENTS_DISCOUNTED": "1"
+        }
+      }
+    ]
+  }
+}

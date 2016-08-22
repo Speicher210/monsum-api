@@ -1,0 +1,12 @@
+{
+  "REQUEST": {
+    "SERVICE": "subscription.get",
+    "FILTER": {
+      "SUBSCRIPTION_ID": 123
+    },
+    "LIMIT": 100
+  },
+  "RESPONSE": {
+    "SUBSCRIPTIONS": []
+  }
+}

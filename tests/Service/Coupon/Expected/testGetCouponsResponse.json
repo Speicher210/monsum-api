@@ -1,0 +1,49 @@
+{
+  "REQUEST": {
+    "SERVICE": "coupon.get",
+    "FILTER": {
+      "CODE": "424258989"
+    },
+    "LIMIT": 100
+  },
+  "RESPONSE": {
+    "COUPONS": [
+      {
+        "CODE": "424258989",
+        "TITLE": "6 Monate Rabattcode",
+        "DISCOUNT": "100,00%",
+        "DISCOUNT_AMOUNT": "100.0000",
+        "DISCOUNT_TYPE": "percent",
+        "AFFILIATE": null,
+        "DISCOUNT_PERIOD": "100 event",
+        "DISCOUNT_PERIOD_AMOUNT": "100",
+        "DISCOUNT_PERIOD_UNIT": "event",
+        "VALID_FROM": "2015-10-21",
+        "VALID_TO": "2015-11-29",
+        "CAMPAIGN": "sprint-summer-autumn-winter campaign",
+        "USAGES": "2",
+        "USAGES_MAX": "0",
+        "STATE": "USED",
+        "ASSIGNED_ARTICLES": "11, 666"
+      },
+      {
+        "CODE": "test",
+        "TITLE": "1 Monat Rabattcode",
+        "DISCOUNT": "1,00 €",
+        "DISCOUNT_AMOUNT": "1.00000",
+        "DISCOUNT_TYPE": "fixed",
+        "AFFILIATE": null,
+        "DISCOUNT_PERIOD": "1 event",
+        "DISCOUNT_PERIOD_AMOUNT": "1",
+        "DISCOUNT_PERIOD_UNIT": "event",
+        "VALID_FROM": null,
+        "VALID_TO": null,
+        "CAMPAIGN": false,
+        "USAGES": "0",
+        "USAGES_MAX": "0",
+        "STATE": "UNUSED",
+        "ASSIGNED_ARTICLES": ""
+      }
+    ]
+  }
+}

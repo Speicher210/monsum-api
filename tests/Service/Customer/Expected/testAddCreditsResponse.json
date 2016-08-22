@@ -1,0 +1,10 @@
+{
+  "REQUEST": {
+    "SERVICE": "customer.addcredits",
+    "DATA": {
+      "CUSTOMER_ID": "995434",
+      "AMOUNT": "1.5",
+      "RESPONSE": []
+    }
+  }
+}

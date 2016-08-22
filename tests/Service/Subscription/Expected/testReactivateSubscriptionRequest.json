@@ -1,0 +1,6 @@
+{
+  "SERVICE": "subscription.reactivate",
+  "DATA": {
+    "SUBSCRIPTION_ID": 501982
+  }
+}

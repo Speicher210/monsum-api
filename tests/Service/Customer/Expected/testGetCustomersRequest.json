@@ -1,0 +1,5 @@
+{
+  "SERVICE": "customer.get",
+  "FILTER": {},
+  "LIMIT": 100
+}

@@ -1,0 +1,7 @@
+{
+  "SERVICE": "coupon.check",
+  "DATA": {
+    "CODE": "COUPON_INVALID",
+    "ARTICLE_NUMBER": "ART_123"
+  }
+}

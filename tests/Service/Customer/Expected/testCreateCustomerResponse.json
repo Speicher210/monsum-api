@@ -1,0 +1,12 @@
+{
+  "REQUEST": {
+    "SERVICE": "customer.create"
+  },
+  "RESPONSE": {
+    "STATUS": "success",
+    "CUSTOMER_ID": 998898,
+    "HASH": "a88a4e7e2024e308cbecbee931b1d40a",
+    "CHANGEDATA_URL": "https://test.com/change-data/1",
+    "DASHBOARD_URL": "https://test.com/dashboard/1"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "SERVICE": "customer.createsecurelink",
+  "DATA": {
+    "CUSTOMER_ID": 996423
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "SERVICE": "article.get",
+  "FILTER": {
+    "ARTICLE_NUMBER": "NON-EXISTING"
+  },
+  "LIMIT": 1
+}

@@ -1,0 +1,9 @@
+{
+  "SERVICE": "subscription.getupcomingamount",
+  "DATA": {
+    "ARTICLE_NUMBER": "A123",
+    "COUPON": "COUPON",
+    "COUNTRY_CODE": "DE",
+    "ADDONS": []
+  }
+}

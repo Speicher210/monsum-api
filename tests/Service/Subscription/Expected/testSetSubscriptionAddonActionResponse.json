@@ -1,0 +1,12 @@
+{
+  "REQUEST": {
+    "SERVICE": "subscription.setaddon",
+    "DATA": {
+      "SUBSCRIPTION_ID": "503772",
+      "ARTICLE_NUMBER": "666"
+    }
+  },
+  "RESPONSE": {
+    "STATUS": "success"
+  }
+}

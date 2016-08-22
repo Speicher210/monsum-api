@@ -1,0 +1,12 @@
+{
+  "REQUEST": {
+    "SERVICE": "coupon.check",
+    "DATA": {
+      "CODE": "COUPON_VALID",
+      "ARTICLE_NUMBER": "ART_123"
+    }
+  },
+  "RESPONSE": {
+    "STATUS": "valid"
+  }
+}

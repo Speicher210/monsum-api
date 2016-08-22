@@ -1,0 +1,15 @@
+{
+  "REQUEST": {
+    "SERVICE": "article.get",
+    "FILTER": [],
+    "LIMIT": 1
+  },
+  "RESPONSE": {
+    "ARTICLES": [
+      {
+        "ARTICLE_NUMBER": "1",
+        "CHECKOUT_URL": "https://app.monsum.com/purchase/aa9122707e4baf2090e23babe7473a79/1"
+      }
+    ]
+  }
+}

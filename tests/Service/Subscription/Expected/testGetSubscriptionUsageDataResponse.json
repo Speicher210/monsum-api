@@ -1,0 +1,14 @@
+{
+  "REQUEST": {
+    "SERVICE": "subscription.getusagedata",
+    "FILTER": {
+      "SUBSCRIPTION_ID": "503772",
+      "START": "2015-10-21 00:00:00",
+      "END": "2015-11-29 00:00:00"
+    },
+    "LIMIT": 100
+  },
+  "RESPONSE": {
+    "ITEMS": []
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "REQUEST": {
+    "SERVICE": "subscription.update"
+  },
+  "RESPONSE": {
+    "STATUS": "success"
+  }
+}

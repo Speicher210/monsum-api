@@ -1,0 +1,13 @@
+{
+  "REQUEST": {
+    "SERVICE": "subscription.createsecurelink",
+    "DATA": {
+      "SUBSCRIPTION_ID": "501982"
+    }
+  },
+  "RESPONSE": {
+    "ADDONS_URL": "https://test.com/addon",
+    "CANCEL_URL": "https://test.com/cancel",
+    "REACTIVATE_URL": "https://test.com/reactivate"
+  }
+}

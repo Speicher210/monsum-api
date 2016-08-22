@@ -1,0 +1,10 @@
+{
+  "REQUEST": {
+    "SERVICE": "article.get",
+    "FILTER": [],
+    "LIMIT": 1
+  },
+  "RESPONSE": {
+    "ARTICLES": []
+  }
+}

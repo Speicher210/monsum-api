@@ -1,0 +1,9 @@
+{
+  "REQUEST": {
+    "SERVICE": "customer.update"
+  },
+  "RESPONSE": {
+    "STATUS": "success",
+    "CUSTOMER_ID": 998898
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "SERVICE": "subscription.cancel",
+  "DATA": {
+    "SUBSCRIPTION_ID": 501982
+  }
+}

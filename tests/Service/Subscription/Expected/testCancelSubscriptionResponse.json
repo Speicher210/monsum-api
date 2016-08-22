@@ -1,0 +1,12 @@
+{
+  "REQUEST": {
+    "SERVICE": "subscription.cancel",
+    "DATA": {
+      "SUBSCRIPTION_ID": "501982"
+    }
+  },
+  "RESPONSE": {
+    "STATUS": "success",
+    "CANCELLATION_DATE": "2015-11-09 12:17:13"
+  }
+}
