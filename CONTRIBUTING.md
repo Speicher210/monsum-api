@@ -2,7 +2,7 @@
 
 Contributions are **welcome** and will be fully **credited**.
 
-We accept contributions via Pull Requests on [Github](https://github.com/Speicher210/fastbill-api).
+We accept contributions via Pull Requests on [Github](https://github.com/Speicher210/monsum-api).
 
 
 ## Pull Requests

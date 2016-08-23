@@ -1,4 +1,4 @@
-# Fastbill Automatic API
+# Monsum API
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -7,14 +7,14 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-API for http://www.fastbill-automatic.com/
+API for https://www.monsum.com/
 
 ## Install
 
 Via Composer
 
 ``` bash
-$ composer require speicher210/fastbill-api
+$ composer require speicher210/monsum-api
 ```
 
 ## Change log
@@ -44,17 +44,17 @@ If you discover any security related issues, please email instead of using the i
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/Speicher210/fastbill-api.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/Speicher210/monsum-api.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/Speicher210/fastbill-api/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/Speicher210/fastbill-api.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/Speicher210/fastbill-api.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/Speicher210/fastbill-api.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/Speicher210/monsum-api/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/Speicher210/monsum-api.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/Speicher210/monsum-api.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/Speicher210/monsum-api.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/Speicher210/fastbill-api
-[link-travis]: https://travis-ci.org/Speicher210/fastbill-api
-[link-scrutinizer]: https://scrutinizer-ci.com/g/Speicher210/fastbill-api/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/Speicher210/fastbill-api
-[link-downloads]: https://packagist.org/packages/Speicher210/fastbill-api
+[link-packagist]: https://packagist.org/packages/Speicher210/monsum-api
+[link-travis]: https://travis-ci.org/Speicher210/monsum-api
+[link-scrutinizer]: https://scrutinizer-ci.com/g/Speicher210/monsum-api/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/Speicher210/monsum-api
+[link-downloads]: https://packagist.org/packages/Speicher210/monsum-api
 [link-author]: https://github.com/dragosprotung
 [link-contributors]: ../../contributors
