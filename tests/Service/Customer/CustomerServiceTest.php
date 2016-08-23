@@ -1,25 +1,25 @@
 <?php
 
-namespace Speicher210\Fastbill\Test\Api\Service\Customer;
+namespace Speicher210\Monsum\Test\Api\Service\Customer;
 
-use Speicher210\Fastbill\Api\Model\Customer;
-use Speicher210\Fastbill\Api\Model\CustomerTrait;
-use Speicher210\Fastbill\Api\Service\Customer\AddCredits\ApiResponse as AddCreditsApiResponse;
-use Speicher210\Fastbill\Api\Service\Customer\AddCredits\Response as AddCreditsResponse;
-use Speicher210\Fastbill\Api\Service\Customer\Create\ApiResponse as CreateApiResponse;
-use Speicher210\Fastbill\Api\Service\Customer\Create\Response as CreateResponse;
-use Speicher210\Fastbill\Api\Service\Customer\CreateSecureLink\ApiResponse as CreateSecureLinkApiResponse;
-use Speicher210\Fastbill\Api\Service\Customer\CreateSecureLink\Response as CreateSecureLinkResponse;
-use Speicher210\Fastbill\Api\Service\Customer\CustomerService;
-use Speicher210\Fastbill\Api\Service\Customer\Delete\ApiResponse as DeleteApiResponse;
-use Speicher210\Fastbill\Api\Service\Customer\Delete\Response as DeleteResponse;
-use Speicher210\Fastbill\Api\Service\Customer\Get\ApiResponse as GetApiResponse;
-use Speicher210\Fastbill\Api\Service\Customer\Get\RequestData as GetRequestData;
-use Speicher210\Fastbill\Api\Service\Customer\Get\Response as GetResponse;
-use Speicher210\Fastbill\Api\Service\Customer\Update\ApiResponse as UpdateApiResponse;
-use Speicher210\Fastbill\Api\Service\Customer\Update\RequestData as UpdateRequestData;
-use Speicher210\Fastbill\Api\Service\Customer\Update\Response as UpdateResponse;
-use Speicher210\Fastbill\Test\Api\Service\AbstractServiceTest;
+use Speicher210\Monsum\Api\Model\Customer;
+use Speicher210\Monsum\Api\Model\CustomerTrait;
+use Speicher210\Monsum\Api\Service\Customer\AddCredits\ApiResponse as AddCreditsApiResponse;
+use Speicher210\Monsum\Api\Service\Customer\AddCredits\Response as AddCreditsResponse;
+use Speicher210\Monsum\Api\Service\Customer\Create\ApiResponse as CreateApiResponse;
+use Speicher210\Monsum\Api\Service\Customer\Create\Response as CreateResponse;
+use Speicher210\Monsum\Api\Service\Customer\CreateSecureLink\ApiResponse as CreateSecureLinkApiResponse;
+use Speicher210\Monsum\Api\Service\Customer\CreateSecureLink\Response as CreateSecureLinkResponse;
+use Speicher210\Monsum\Api\Service\Customer\CustomerService;
+use Speicher210\Monsum\Api\Service\Customer\Delete\ApiResponse as DeleteApiResponse;
+use Speicher210\Monsum\Api\Service\Customer\Delete\Response as DeleteResponse;
+use Speicher210\Monsum\Api\Service\Customer\Get\ApiResponse as GetApiResponse;
+use Speicher210\Monsum\Api\Service\Customer\Get\RequestData as GetRequestData;
+use Speicher210\Monsum\Api\Service\Customer\Get\Response as GetResponse;
+use Speicher210\Monsum\Api\Service\Customer\Update\ApiResponse as UpdateApiResponse;
+use Speicher210\Monsum\Api\Service\Customer\Update\RequestData as UpdateRequestData;
+use Speicher210\Monsum\Api\Service\Customer\Update\Response as UpdateResponse;
+use Speicher210\Monsum\Test\Api\Service\AbstractServiceTest;
 
 /**
  * Test for the customer service.
@@ -35,7 +35,7 @@ class CustomerServiceTest extends AbstractServiceTest
         $data = new GetRequestData();
         $apiResponse = $customerService->getCustomers($data);
 
-        $this->assertInstanceOf(GetApiResponse::class, $apiResponse);
+        static::assertInstanceOf(GetApiResponse::class, $apiResponse);
         /** @var GetResponse $response */
         $response = $apiResponse->getResponse();
 
@@ -43,7 +43,7 @@ class CustomerServiceTest extends AbstractServiceTest
         $expectedCustomer1 = $this->getCustomerForTesting($expectedCustomer1, 1);
         $expectedCustomer2 = new Customer();
         $expectedCustomer2 = $this->getCustomerForTesting($expectedCustomer2, 2);
-        $this->assertEquals(array($expectedCustomer1, $expectedCustomer2), $response->getCustomers());
+        static::assertEquals(array($expectedCustomer1, $expectedCustomer2), $response->getCustomers());
     }
 
     public function testGetCustomer()
@@ -55,7 +55,7 @@ class CustomerServiceTest extends AbstractServiceTest
 
         $expectedCustomer = new Customer();
         $expectedCustomer = $this->getCustomerForTesting($expectedCustomer, 1);
-        $this->assertEquals($expectedCustomer, $actualCustomer);
+        static::assertEquals($expectedCustomer, $actualCustomer);
     }
 
     public function testGetCustomerByExternalUid()
@@ -67,7 +67,7 @@ class CustomerServiceTest extends AbstractServiceTest
 
         $expectedCustomer = new Customer();
         $expectedCustomer = $this->getCustomerForTesting($expectedCustomer, 1);
-        $this->assertEquals($expectedCustomer, $actualCustomer);
+        static::assertEquals($expectedCustomer, $actualCustomer);
     }
 
     public function testGetCustomerWithDateFieldsEmptyString()
@@ -79,7 +79,7 @@ class CustomerServiceTest extends AbstractServiceTest
 
         $expectedCustomer = new Customer();
         $expectedCustomer->setCustomerId(1);
-        $this->assertEquals($expectedCustomer, $actualCustomer);
+        static::assertEquals($expectedCustomer, $actualCustomer);
     }
 
     public function testCreateCustomer()
@@ -94,7 +94,7 @@ class CustomerServiceTest extends AbstractServiceTest
         $data->setDashboardUrl(null);
         $apiResponse = $customerService->createCustomer($data);
 
-        $this->assertInstanceOf(CreateApiResponse::class, $apiResponse);
+        static::assertInstanceOf(CreateApiResponse::class, $apiResponse);
         /** @var CreateResponse $response */
         $response = $apiResponse->getResponse();
 
@@ -104,7 +104,7 @@ class CustomerServiceTest extends AbstractServiceTest
         $expectedCreateResponse->setHash('a88a4e7e2024e308cbecbee931b1d40a');
         $expectedCreateResponse->setDashboardUrl('https://test.com/dashboard/1');
         $expectedCreateResponse->setChangeDataUrl('https://test.com/change-data/1');
-        $this->assertEquals($expectedCreateResponse, $response);
+        static::assertEquals($expectedCreateResponse, $response);
     }
 
     public function testUpdateCustomer()
@@ -119,14 +119,14 @@ class CustomerServiceTest extends AbstractServiceTest
         $data->setDashboardUrl(null);
         $apiResponse = $customerService->updateCustomer($data);
 
-        $this->assertInstanceOf(UpdateApiResponse::class, $apiResponse);
+        static::assertInstanceOf(UpdateApiResponse::class, $apiResponse);
         /** @var UpdateResponse $response */
         $response = $apiResponse->getResponse();
 
         $expectedUpdateResponse = new UpdateResponse();
         $expectedUpdateResponse->setStatus('success');
         $expectedUpdateResponse->setCustomerId(998898);
-        $this->assertEquals($expectedUpdateResponse, $response);
+        static::assertEquals($expectedUpdateResponse, $response);
     }
 
     public function testDeleteCustomer()
@@ -135,14 +135,14 @@ class CustomerServiceTest extends AbstractServiceTest
         $customerService = $this->getServiceToTest();
 
         $apiResponse = $customerService->deleteCustomer('996423');
-        $this->assertInstanceOf(DeleteApiResponse::class, $apiResponse);
+        static::assertInstanceOf(DeleteApiResponse::class, $apiResponse);
 
         /** @var DeleteResponse $response */
         $response = $apiResponse->getResponse();
 
         $expectedDeleteResponse = new DeleteResponse();
         $expectedDeleteResponse->setStatus(DeleteResponse::STATUS_SUCCESS);
-        $this->assertEquals($expectedDeleteResponse, $response);
+        static::assertEquals($expectedDeleteResponse, $response);
     }
 
     public function testAddCredits()
@@ -151,12 +151,12 @@ class CustomerServiceTest extends AbstractServiceTest
         $customerService = $this->getServiceToTest();
 
         $apiResponse = $customerService->addCredits(995434, 1.5);
-        $this->assertInstanceOf(AddCreditsApiResponse::class, $apiResponse);
+        static::assertInstanceOf(AddCreditsApiResponse::class, $apiResponse);
 
         /** @var AddCreditsResponse $response */
         $response = $apiResponse->getResponse();
-        // There is no response from the Fastbill API.
-        $this->assertNull($response);
+        // There is no response from the Monsum API.
+        static::assertNull($response);
     }
 
     public function testCreateSecureLink()
@@ -165,7 +165,7 @@ class CustomerServiceTest extends AbstractServiceTest
         $customerService = $this->getServiceToTest();
 
         $apiResponse = $customerService->createSecureLink('996423');
-        $this->assertInstanceOf(CreateSecureLinkApiResponse::class, $apiResponse);
+        static::assertInstanceOf(CreateSecureLinkApiResponse::class, $apiResponse);
 
         /** @var CreateSecureLinkResponse $response */
         $response = $apiResponse->getResponse();
@@ -174,7 +174,7 @@ class CustomerServiceTest extends AbstractServiceTest
         $expectedCreateSecureLinkResponse
             ->setDashboardUrl('https://create-secure-link.test.com/dashboard')
             ->setAccountDataUrl('https://create-secure-link.test.com/account');
-        $this->assertEquals($expectedCreateSecureLinkResponse, $response);
+        static::assertEquals($expectedCreateSecureLinkResponse, $response);
     }
 
     /**

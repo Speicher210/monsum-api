@@ -1,8 +1,8 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Coupon;
+namespace Speicher210\Monsum\Api\Service\Coupon;
 
-use Speicher210\Fastbill\Api\AbstractService;
+use Speicher210\Monsum\Api\AbstractService;
 
 /**
  * Service for coupon.

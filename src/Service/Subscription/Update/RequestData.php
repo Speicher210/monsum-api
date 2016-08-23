@@ -1,10 +1,10 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Subscription\Update;
+namespace Speicher210\Monsum\Api\Service\Subscription\Update;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractRequestData;
-use Speicher210\Fastbill\Api\Model\Feature;
+use Speicher210\Monsum\Api\AbstractRequestData;
+use Speicher210\Monsum\Api\Model\Feature;
 
 /**
  * The request data for updating a subscription.
@@ -66,7 +66,7 @@ final class RequestData extends AbstractRequestData
      *
      * @var array
      *
-     * @JMS\Type("array<Speicher210\Fastbill\Api\Model\Feature>")
+     * @JMS\Type("array<Speicher210\Monsum\Api\Model\Feature>")
      * @JMS\SerializedName("FEATURES")
      */
     protected $features = array();

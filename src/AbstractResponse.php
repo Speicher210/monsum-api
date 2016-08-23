@@ -1,6 +1,6 @@
 <?php
 
-namespace Speicher210\Fastbill\Api;
+namespace Speicher210\Monsum\Api;
 
 use JMS\Serializer\Annotation as JMS;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Subscription\Postpone;
+namespace Speicher210\Monsum\Api\Service\Subscription\Postpone;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractRequest;
+use Speicher210\Monsum\Api\AbstractRequest;
 
 /**
  * The request for postponing a subscription.
@@ -15,7 +15,7 @@ class Request extends AbstractRequest
      *
      * @var RequestData
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Service\Subscription\Postpone\RequestData")
+     * @JMS\Type("Speicher210\Monsum\Api\Service\Subscription\Postpone\RequestData")
      * @JMS\SerializedName("DATA")
      */
     protected $data;

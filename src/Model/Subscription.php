@@ -1,6 +1,6 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Model;
+namespace Speicher210\Monsum\Api\Model;
 
 use JMS\Serializer\Annotation as JMS;
 
@@ -38,7 +38,7 @@ class Subscription
      *
      * @var Coupon
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Model\Coupon")
+     * @JMS\Type("Speicher210\Monsum\Api\Model\Coupon")
      * @JMS\SerializedName("COUPON")
      */
     protected $coupon;

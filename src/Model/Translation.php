@@ -1,6 +1,6 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Model;
+namespace Speicher210\Monsum\Api\Model;
 
 use JMS\Serializer\Annotation as JMS;
 
@@ -14,7 +14,7 @@ class Translation
      *
      * @var TranslationText
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Model\TranslationText")
+     * @JMS\Type("Speicher210\Monsum\Api\Model\TranslationText")
      * @JMS\SerializedName("EN")
      */
     protected $english;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Subscription\Postpone;
+namespace Speicher210\Monsum\Api\Service\Subscription\Postpone;
 
-use Speicher210\Fastbill\Api\AbstractResponse;
+use Speicher210\Monsum\Api\AbstractResponse;
 
 /**
  * Response when postponing a subscription.

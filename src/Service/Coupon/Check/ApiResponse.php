@@ -1,9 +1,9 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Coupon\Check;
+namespace Speicher210\Monsum\Api\Service\Coupon\Check;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractApiResponse;
+use Speicher210\Monsum\Api\AbstractApiResponse;
 
 /**
  * API response when checking a coupon.
@@ -15,7 +15,7 @@ class ApiResponse extends AbstractApiResponse
     /**
      * @var Request
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Service\Coupon\Check\Request")
+     * @JMS\Type("Speicher210\Monsum\Api\Service\Coupon\Check\Request")
      * @JMS\SerializedName("REQUEST")
      */
     protected $request;
@@ -25,7 +25,7 @@ class ApiResponse extends AbstractApiResponse
      *
      * @var array
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Service\Coupon\Check\Response")
+     * @JMS\Type("Speicher210\Monsum\Api\Service\Coupon\Check\Response")
      * @JMS\SerializedName("RESPONSE")
      */
     protected $response;

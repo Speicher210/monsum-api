@@ -1,8 +1,8 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Subscription\DeleteUsageData;
+namespace Speicher210\Monsum\Api\Service\Subscription\DeleteUsageData;
 
-use Speicher210\Fastbill\Api\AbstractResponse;
+use Speicher210\Monsum\Api\AbstractResponse;
 
 /**
  * Response when deleting usage data for a subscription.

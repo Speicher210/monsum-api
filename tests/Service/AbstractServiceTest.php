@@ -1,21 +1,21 @@
 <?php
 
-namespace Speicher210\Fastbill\Test\Api\Service;
+namespace Speicher210\Monsum\Test\Api\Service;
 
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializerInterface;
-use Speicher210\Fastbill\Api\ApiCredentials;
-use Speicher210\Fastbill\Api\ApiResponseInterface;
-use Speicher210\Fastbill\Api\Exception\ApiResponseException;
-use Speicher210\Fastbill\Api\RequestInterface;
-use Speicher210\Fastbill\Api\ResponseInterface;
-use Speicher210\Fastbill\Api\Serializer\Handler\DateHandler;
-use Speicher210\Fastbill\Api\ServiceInterface;
-use Speicher210\Fastbill\Api\Transport\TransportInterface;
+use Speicher210\Monsum\Api\ApiCredentials;
+use Speicher210\Monsum\Api\ApiResponseInterface;
+use Speicher210\Monsum\Api\Exception\ApiResponseException;
+use Speicher210\Monsum\Api\RequestInterface;
+use Speicher210\Monsum\Api\ResponseInterface;
+use Speicher210\Monsum\Api\Serializer\Handler\DateHandler;
+use Speicher210\Monsum\Api\ServiceInterface;
+use Speicher210\Monsum\Api\Transport\TransportInterface;
 
 /**
- * Abstract class to test Fastbill services.
+ * Abstract class to test Monsum services.
  */
 abstract class AbstractServiceTest extends \PHPUnit_Framework_TestCase
 {
@@ -33,7 +33,7 @@ abstract class AbstractServiceTest extends \PHPUnit_Framework_TestCase
     public static function setUpBeforeClass()
     {
         if (self::$serializerTempDirectory === null) {
-            self::$serializerTempDirectory = sys_get_temp_dir().'/'.uniqid('sp210_fastbill_api_test', true);
+            self::$serializerTempDirectory = sys_get_temp_dir().'/'.uniqid('sp210_monsum_api_test', true);
         }
     }
 
@@ -43,22 +43,22 @@ abstract class AbstractServiceTest extends \PHPUnit_Framework_TestCase
 
         $responseMock = $this->getMock(ResponseInterface::class);
         $responseMock
-            ->expects($this->once())
+            ->expects(static::once())
             ->method('hasErrors')
             ->willReturn(true);
         $responseMock
-            ->expects($this->once())
+            ->expects(static::once())
             ->method('getErrors')
             ->willReturn(array());
         $apiResponseMock = $this->getMock(ApiResponseInterface::class);
         $apiResponseMock
-            ->expects($this->exactly(3))
+            ->expects(static::exactly(3))
             ->method('getResponse')
             ->willReturn($responseMock);
         $transportMock = $this->getMock(TransportInterface::class);
         $serializerMock = $this->getMock(SerializerInterface::class);
         $serializerMock
-            ->expects($this->once())
+            ->expects(static::once())
             ->method('deserialize')
             ->willReturn($apiResponseMock);
 
@@ -66,7 +66,7 @@ abstract class AbstractServiceTest extends \PHPUnit_Framework_TestCase
 
         $requestMock = $this->getMock(RequestInterface::class);
         $requestMock
-            ->expects($this->once())
+            ->expects(static::once())
             ->method('getService')
             ->willReturn('test.service');
         $responseClass = $this->getMock(ApiResponseInterface::class);
@@ -105,12 +105,12 @@ abstract class AbstractServiceTest extends \PHPUnit_Framework_TestCase
 
         $transportMock = $this->getMock(TransportInterface::class);
         $transportMock
-            ->expects($this->once())
+            ->expects(static::once())
             ->method('sendRequest')
-            ->with($this->equalTo($transportRequest))
+            ->with(static::equalTo($transportRequest))
             ->willReturn($transportResponse);
         $transportMock
-            ->expects($this->any())
+            ->expects(static::any())
             ->method('getCredentials')
             ->willReturn($apiCredentials);
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Subscription\GetUsageData;
+namespace Speicher210\Monsum\Api\Service\Subscription\GetUsageData;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractResponse;
+use Speicher210\Monsum\Api\AbstractResponse;
 
 /**
  * Response when getting usage data for a subscription.

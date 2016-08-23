@@ -1,9 +1,9 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Subscription\Reactivate;
+namespace Speicher210\Monsum\Api\Service\Subscription\Reactivate;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractApiResponse;
+use Speicher210\Monsum\Api\AbstractApiResponse;
 
 /**
  * API response when reactivating a subscription.
@@ -17,7 +17,7 @@ class ApiResponse extends AbstractApiResponse
      *
      * @var Request
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Service\Subscription\Reactivate\Request")
+     * @JMS\Type("Speicher210\Monsum\Api\Service\Subscription\Reactivate\Request")
      * @JMS\SerializedName("REQUEST")
      */
     protected $request;
@@ -27,7 +27,7 @@ class ApiResponse extends AbstractApiResponse
      *
      * @var Response
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Service\Subscription\Reactivate\Response")
+     * @JMS\Type("Speicher210\Monsum\Api\Service\Subscription\Reactivate\Response")
      * @JMS\SerializedName("RESPONSE")
      */
     protected $response;

@@ -1,9 +1,9 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Subscription\Get;
+namespace Speicher210\Monsum\Api\Service\Subscription\Get;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractRequestData;
+use Speicher210\Monsum\Api\AbstractRequestData;
 
 /**
  * The request data for getting the subscriptions.
@@ -87,7 +87,7 @@ final class RequestData extends AbstractRequestData
      * Set the customer ID.
      *
      * @param integer $customerId The customer ID.
-     * @return RequestData
+     * @return integer
      */
     public function setCustomerId($customerId)
     {

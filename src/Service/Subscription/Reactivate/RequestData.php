@@ -1,9 +1,9 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Subscription\Reactivate;
+namespace Speicher210\Monsum\Api\Service\Subscription\Reactivate;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractRequestData;
+use Speicher210\Monsum\Api\AbstractRequestData;
 
 /**
  * The request for reactivating a subscription.

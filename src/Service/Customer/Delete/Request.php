@@ -1,9 +1,9 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Customer\Delete;
+namespace Speicher210\Monsum\Api\Service\Customer\Delete;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractRequest;
+use Speicher210\Monsum\Api\AbstractRequest;
 
 /**
  * The request for deleting a customer.
@@ -13,7 +13,7 @@ class Request extends AbstractRequest
     /**
      * @var RequestData
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Service\Customer\Delete\RequestData")
+     * @JMS\Type("Speicher210\Monsum\Api\Service\Customer\Delete\RequestData")
      * @JMS\SerializedName("DATA")
      */
     protected $data;

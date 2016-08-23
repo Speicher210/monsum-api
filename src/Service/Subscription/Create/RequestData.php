@@ -1,10 +1,10 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Subscription\Create;
+namespace Speicher210\Monsum\Api\Service\Subscription\Create;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractRequestData;
-use Speicher210\Fastbill\Api\Model\SubscriptionTrait;
+use Speicher210\Monsum\Api\AbstractRequestData;
+use Speicher210\Monsum\Api\Model\SubscriptionTrait;
 
 /**
  * The request data for creating a subscription.

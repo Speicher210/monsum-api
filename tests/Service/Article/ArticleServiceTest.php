@@ -1,20 +1,20 @@
 <?php
 
-namespace Speicher210\Fastbill\Test\Api\Service\Article;
+namespace Speicher210\Monsum\Test\Api\Service\Article;
 
 use JMS\Serializer\SerializerInterface;
-use Speicher210\Fastbill\Api\ApiCredentials;
-use Speicher210\Fastbill\Api\Model\Article;
-use Speicher210\Fastbill\Api\Model\Customer;
-use Speicher210\Fastbill\Api\Model\Feature;
-use Speicher210\Fastbill\Api\Model\Subscription;
-use Speicher210\Fastbill\Api\Model\Translation;
-use Speicher210\Fastbill\Api\Model\TranslationText;
-use Speicher210\Fastbill\Api\Service\Article\ArticleService;
-use Speicher210\Fastbill\Api\Service\Article\Get\ApiResponse as GetApiResponse;
-use Speicher210\Fastbill\Api\Service\Article\Get\Response as GetResponse;
-use Speicher210\Fastbill\Api\Transport\TransportInterface;
-use Speicher210\Fastbill\Test\Api\Service\AbstractServiceTest;
+use Speicher210\Monsum\Api\ApiCredentials;
+use Speicher210\Monsum\Api\Model\Article;
+use Speicher210\Monsum\Api\Model\Customer;
+use Speicher210\Monsum\Api\Model\Feature;
+use Speicher210\Monsum\Api\Model\Subscription;
+use Speicher210\Monsum\Api\Model\Translation;
+use Speicher210\Monsum\Api\Model\TranslationText;
+use Speicher210\Monsum\Api\Service\Article\ArticleService;
+use Speicher210\Monsum\Api\Service\Article\Get\ApiResponse as GetApiResponse;
+use Speicher210\Monsum\Api\Service\Article\Get\Response as GetResponse;
+use Speicher210\Monsum\Api\Transport\TransportInterface;
+use Speicher210\Monsum\Test\Api\Service\AbstractServiceTest;
 
 /**
  * Test for the article service.
@@ -28,11 +28,11 @@ class ArticleServiceTest extends AbstractServiceTest
         $articleService = $this->getServiceToTest();
         $apiResponse = $articleService->getArticles(1);
 
-        $this->assertInstanceOf(GetApiResponse::class, $apiResponse);
+        static::assertInstanceOf(GetApiResponse::class, $apiResponse);
         /** @var GetResponse $response */
         $response = $apiResponse->getResponse();
 
-        $this->assertEquals(array($this->getExpectedArticle()), $response->getArticles());
+        static::assertEquals(array($this->getExpectedArticle()), $response->getArticles());
     }
 
     public function testGetArticle()
@@ -43,7 +43,7 @@ class ArticleServiceTest extends AbstractServiceTest
         $actualArticle = $articleService->getArticle(1);
         $expectedArticle = $this->getExpectedArticle();
 
-        $this->assertEquals($expectedArticle, $actualArticle);
+        static::assertEquals($expectedArticle, $actualArticle);
     }
 
     public function testGetArticleCheckoutURLReturnsTheURLForACustomer()
@@ -53,7 +53,7 @@ class ArticleServiceTest extends AbstractServiceTest
         /** @var ArticleService $articleService */
         $transportMock = $this->getMock(TransportInterface::class);
         $transportMock
-            ->expects($this->any())
+            ->expects(static::any())
             ->method('getCredentials')
             ->willReturn($apiCredentials);
         $serializerMock = $this->getMock(SerializerInterface::class);
@@ -64,7 +64,7 @@ class ArticleServiceTest extends AbstractServiceTest
         $customer = new Customer();
         $customer->setCustomerId(27);
 
-        $this->assertSame(
+        static::assertSame(
             'https://app.monsum.com/checkout/0/account-hash/27/1',
             $articleService->getArticleCheckoutURL($article, $customer)
         );
@@ -85,7 +85,7 @@ class ArticleServiceTest extends AbstractServiceTest
         /** @var ArticleService $articleService */
         $articleService = $this->getServiceToTest();
 
-        $this->assertSame(
+        static::assertSame(
             'https://app.monsum.com/purchase/aa9122707e4baf2090e23babe7473a79/1',
             $articleService->getArticleNumberCheckoutURL(1)
         );
@@ -99,7 +99,7 @@ class ArticleServiceTest extends AbstractServiceTest
         $customer = new Customer();
         $customer->setCustomerId(27);
 
-        $this->assertSame(
+        static::assertSame(
             'https://app.monsum.com/checkout/0/account-hash/27/1',
             $articleService->getArticleNumberCheckoutURL('1', $customer)
         );
@@ -113,7 +113,7 @@ class ArticleServiceTest extends AbstractServiceTest
         /** @var ArticleService $articleService */
         $transportMock = $this->getMock(TransportInterface::class);
         $transportMock
-            ->expects($this->any())
+            ->expects(static::any())
             ->method('getCredentials')
             ->willReturn($apiCredentials);
         $serializerMock = $this->getMock(SerializerInterface::class);
@@ -125,7 +125,7 @@ class ArticleServiceTest extends AbstractServiceTest
         $article = new Article();
         $article->setArticleNumber('MY_PRODUCT');
 
-        $this->assertSame(
+        static::assertSame(
             'https://app.monsum.com/change/account-hash/72/MY_PRODUCT',
             $articleService->getSubscriptionProductChangeURL($subscription, $article)
         );

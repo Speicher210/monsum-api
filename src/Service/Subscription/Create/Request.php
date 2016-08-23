@@ -1,9 +1,9 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Subscription\Create;
+namespace Speicher210\Monsum\Api\Service\Subscription\Create;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractRequest;
+use Speicher210\Monsum\Api\AbstractRequest;
 
 /**
  * The request for creating a subscription.
@@ -15,7 +15,7 @@ class Request extends AbstractRequest
      *
      * @var array
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Service\Subscription\Create\RequestData")
+     * @JMS\Type("Speicher210\Monsum\Api\Service\Subscription\Create\RequestData")
      * @JMS\SerializedName("DATA")
      */
     protected $data;

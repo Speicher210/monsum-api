@@ -1,9 +1,9 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Subscription\SetAddon;
+namespace Speicher210\Monsum\Api\Service\Subscription\SetAddon;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractRequestData;
+use Speicher210\Monsum\Api\AbstractRequestData;
 
 /**
  * The request data for setting addon for a subscription.

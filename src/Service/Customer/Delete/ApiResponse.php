@@ -1,9 +1,9 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Customer\Delete;
+namespace Speicher210\Monsum\Api\Service\Customer\Delete;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractApiResponse;
+use Speicher210\Monsum\Api\AbstractApiResponse;
 
 /**
  * API response when deleting a customer.
@@ -17,7 +17,7 @@ class ApiResponse extends AbstractApiResponse
      *
      * @var Request
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Service\Customer\Delete\Request")
+     * @JMS\Type("Speicher210\Monsum\Api\Service\Customer\Delete\Request")
      * @JMS\SerializedName("REQUEST")
      */
     protected $request;
@@ -27,7 +27,7 @@ class ApiResponse extends AbstractApiResponse
      *
      * @var array
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Service\Customer\Delete\Response")
+     * @JMS\Type("Speicher210\Monsum\Api\Service\Customer\Delete\Response")
      * @JMS\SerializedName("RESPONSE")
      */
     protected $response;

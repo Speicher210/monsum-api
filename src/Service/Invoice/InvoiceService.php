@@ -1,8 +1,8 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Invoice;
+namespace Speicher210\Monsum\Api\Service\Invoice;
 
-use Speicher210\Fastbill\Api\AbstractService;
+use Speicher210\Monsum\Api\AbstractService;
 
 /**
  * Service for invoices.
@@ -28,7 +28,7 @@ class InvoiceService extends AbstractService
                 $invoiceDate->setTime(0, 0, 0);
             }
 
-            // We need to convert the due date to DateTime because of inconsistencies in the Fastbill API response.
+            // We need to convert the due date to DateTime because of inconsistencies in the Monsum API response.
             $dueDate = $invoice->getDueDate();
             if ($dueDate !== null) {
                 $dueDate = new \DateTime($dueDate);

@@ -1,9 +1,9 @@
 <?php
 
-namespace Speicher210\Fastbill\Api;
+namespace Speicher210\Monsum\Api;
 
 /**
- * Interface for all Fastbill services.
+ * Interface for all Monsum services.
  */
 interface ServiceInterface
 {

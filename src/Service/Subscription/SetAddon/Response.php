@@ -1,8 +1,8 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Subscription\SetAddon;
+namespace Speicher210\Monsum\Api\Service\Subscription\SetAddon;
 
-use Speicher210\Fastbill\Api\AbstractResponse;
+use Speicher210\Monsum\Api\AbstractResponse;
 
 /**
  * Response when setting addon for a subscription.

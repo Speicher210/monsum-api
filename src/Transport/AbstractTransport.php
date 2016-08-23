@@ -1,8 +1,8 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Transport;
+namespace Speicher210\Monsum\Api\Transport;
 
-use Speicher210\Fastbill\Api\ApiCredentials;
+use Speicher210\Monsum\Api\ApiCredentials;
 
 /**
  * Abstract implementation for transport.

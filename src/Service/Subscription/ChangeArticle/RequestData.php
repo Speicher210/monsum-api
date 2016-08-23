@@ -1,11 +1,11 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Subscription\ChangeArticle;
+namespace Speicher210\Monsum\Api\Service\Subscription\ChangeArticle;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractRequestData;
-use Speicher210\Fastbill\Api\Model\Addon;
-use Speicher210\Fastbill\Api\Model\Feature;
+use Speicher210\Monsum\Api\AbstractRequestData;
+use Speicher210\Monsum\Api\Model\Addon;
+use Speicher210\Monsum\Api\Model\Feature;
 
 /**
  * The request data for changing article of a subscription.
@@ -107,7 +107,7 @@ final class RequestData extends AbstractRequestData
      *
      * @var array
      *
-     * @JMS\Type("array<Speicher210\Fastbill\Api\Model\Addon>")
+     * @JMS\Type("array<Speicher210\Monsum\Api\Model\Addon>")
      * @JMS\SerializedName("ADDONS")
      */
     protected $addons;
@@ -117,7 +117,7 @@ final class RequestData extends AbstractRequestData
      *
      * @var array
      *
-     * @JMS\Type("array<Speicher210\Fastbill\Api\Model\Feature>")
+     * @JMS\Type("array<Speicher210\Monsum\Api\Model\Feature>")
      * @JMS\SerializedName("FEATURES")
      */
     protected $features = array();

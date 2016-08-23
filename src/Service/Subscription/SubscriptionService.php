@@ -1,10 +1,10 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Subscription;
+namespace Speicher210\Monsum\Api\Service\Subscription;
 
-use Speicher210\Fastbill\Api\AbstractService;
-use Speicher210\Fastbill\Api\Model\Feature;
-use Speicher210\Fastbill\Api\Model\Subscription;
+use Speicher210\Monsum\Api\AbstractService;
+use Speicher210\Monsum\Api\Model\Feature;
+use Speicher210\Monsum\Api\Model\Subscription;
 
 /**
  * Service for subscriptions.
@@ -12,9 +12,9 @@ use Speicher210\Fastbill\Api\Model\Subscription;
 class SubscriptionService extends AbstractService
 {
     /**
-     * Get one subscription by using the Fastbill subscription ID.
+     * Get one subscription by using the Monsum subscription ID.
      *
-     * @param integer $subscriptionId The Fastbill subscription ID.
+     * @param integer $subscriptionId The Monsum subscription ID.
      * @return Subscription|null
      */
     public function getSubscriptionById($subscriptionId)

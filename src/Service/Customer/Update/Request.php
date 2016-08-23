@@ -1,9 +1,9 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Customer\Update;
+namespace Speicher210\Monsum\Api\Service\Customer\Update;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractRequest;
+use Speicher210\Monsum\Api\AbstractRequest;
 
 /**
  * The request for updating the customers.
@@ -13,7 +13,7 @@ class Request extends AbstractRequest
     /**
      * @var RequestData
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Service\Customer\Update\RequestData")
+     * @JMS\Type("Speicher210\Monsum\Api\Service\Customer\Update\RequestData")
      * @JMS\SerializedName("DATA")
      */
     protected $data;

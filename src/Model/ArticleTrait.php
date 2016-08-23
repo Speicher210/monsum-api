@@ -1,6 +1,6 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Model;
+namespace Speicher210\Monsum\Api\Model;
 
 use JMS\Serializer\Annotation as JMS;
 
@@ -94,7 +94,7 @@ trait ArticleTrait
      *
      * @var Translation
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Model\Translation")
+     * @JMS\Type("Speicher210\Monsum\Api\Model\Translation")
      * @JMS\SerializedName("TRANSLATIONS")
      */
     protected $translation;
@@ -214,7 +214,7 @@ trait ArticleTrait
      *
      * @var array
      *
-     * @JMS\Type("array<Speicher210\Fastbill\Api\Model\Feature>")
+     * @JMS\Type("array<Speicher210\Monsum\Api\Model\Feature>")
      * @JMS\SerializedName("FEATURES")
      */
     protected $features = array();

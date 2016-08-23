@@ -1,9 +1,9 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Subscription\Renew;
+namespace Speicher210\Monsum\Api\Service\Subscription\Renew;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractRequest;
+use Speicher210\Monsum\Api\AbstractRequest;
 
 /**
  * The request for renewing a subscription.
@@ -15,7 +15,7 @@ class Request extends AbstractRequest
      *
      * @var RequestData
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Service\Subscription\Renew\RequestData")
+     * @JMS\Type("Speicher210\Monsum\Api\Service\Subscription\Renew\RequestData")
      * @JMS\SerializedName("DATA")
      */
     protected $data;

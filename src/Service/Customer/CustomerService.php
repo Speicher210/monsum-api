@@ -1,9 +1,9 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Customer;
+namespace Speicher210\Monsum\Api\Service\Customer;
 
-use Speicher210\Fastbill\Api\AbstractService;
-use Speicher210\Fastbill\Api\Model\Customer;
+use Speicher210\Monsum\Api\AbstractService;
+use Speicher210\Monsum\Api\Model\Customer;
 
 /**
  * Service for customers.

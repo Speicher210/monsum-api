@@ -1,10 +1,10 @@
 <?php
 
-namespace Speicher210\Fastbill\Api;
+namespace Speicher210\Monsum\Api;
 
 use JMS\Serializer\SerializerInterface;
-use Speicher210\Fastbill\Api\Exception\ApiResponseException;
-use Speicher210\Fastbill\Api\Transport\TransportInterface;
+use Speicher210\Monsum\Api\Exception\ApiResponseException;
+use Speicher210\Monsum\Api\Transport\TransportInterface;
 
 /**
  * Abstract service.
@@ -36,7 +36,7 @@ abstract class AbstractService implements ServiceInterface
     }
 
     /**
-     * Send a request to fastbill.
+     * Send a request to Monsum.
      *
      * @param mixed $request The request to send.
      * @param string $responseClass The class that should be used to unserialize the response.

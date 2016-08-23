@@ -1,9 +1,9 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Subscription\Cancel;
+namespace Speicher210\Monsum\Api\Service\Subscription\Cancel;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractRequest;
+use Speicher210\Monsum\Api\AbstractRequest;
 
 /**
  * The request for cancellation of a subscription.
@@ -15,7 +15,7 @@ class Request extends AbstractRequest
      *
      * @var array
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Service\Subscription\Cancel\RequestData")
+     * @JMS\Type("Speicher210\Monsum\Api\Service\Subscription\Cancel\RequestData")
      * @JMS\SerializedName("DATA")
      */
     protected $data;

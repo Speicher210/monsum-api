@@ -1,9 +1,9 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Invoice\Get;
+namespace Speicher210\Monsum\Api\Service\Invoice\Get;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractResponse;
+use Speicher210\Monsum\Api\AbstractResponse;
 
 /**
  * Response when getting the invoices.
@@ -15,7 +15,7 @@ class Response extends AbstractResponse
      *
      * @var array
      *
-     * @JMS\Type("array<Speicher210\Fastbill\Api\Model\Invoice>")
+     * @JMS\Type("array<Speicher210\Monsum\Api\Model\Invoice>")
      * @JMS\SerializedName("INVOICES")
      */
     protected $invoices = array();
@@ -23,7 +23,7 @@ class Response extends AbstractResponse
     /**
      * Get the subscriptions from the response.
      *
-     * @return \Speicher210\Fastbill\Api\Model\Invoice[]
+     * @return \Speicher210\Monsum\Api\Model\Invoice[]
      */
     public function getInvoices()
     {

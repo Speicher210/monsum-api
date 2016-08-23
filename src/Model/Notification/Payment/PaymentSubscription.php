@@ -1,9 +1,9 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Model\Notification\Payment;
+namespace Speicher210\Monsum\Api\Model\Notification\Payment;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\Model\Notification\Subscription\SubscriptionTrait;
+use Speicher210\Monsum\Api\Model\Notification\Subscription\SubscriptionTrait;
 
 /**
  * Subscription in a payment notification model.

@@ -28,12 +28,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Speicher210\\Fastbill\\Api\\": "src"
+            "Speicher210\\Monsum\\Api\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Speicher210\\Fastbill\\Test\\Api\\": "tests"
+            "Speicher210\\Monsum\\Test\\Api\\": "tests"
         }
     },
     "extra": {

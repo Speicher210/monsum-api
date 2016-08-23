@@ -1,9 +1,9 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Subscription\ChangeArticle;
+namespace Speicher210\Monsum\Api\Service\Subscription\ChangeArticle;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractResponse;
+use Speicher210\Monsum\Api\AbstractResponse;
 
 /**
  * Response when changing article of the subscription.
@@ -34,7 +34,7 @@ class Response extends AbstractResponse
      * Set the subscription ID.
      *
      * @param integer $subscriptionId The subscription ID.
-     * @return RequestData
+     * @return Response
      */
     public function setSubscriptionId($subscriptionId)
     {

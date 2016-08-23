@@ -1,6 +1,6 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Model;
+namespace Speicher210\Monsum\Api\Model;
 
 use JMS\Serializer\Annotation as JMS;
 
@@ -412,7 +412,7 @@ class Invoice
     /**
      * The due date.
      *
-     * We serialize it as string because of inconsistencies in the Fastbill API response.
+     * We serialize it as string because of inconsistencies in the Monsum API response.
      * Depending on the customer, the due date may or may not have a time component in the response.
      *
      * @var \DateTime
@@ -477,7 +477,7 @@ class Invoice
      *
      * @var array
      *
-     * @JMS\Type("array<Speicher210\Fastbill\Api\Model\InvoiceVatItem>")
+     * @JMS\Type("array<Speicher210\Monsum\Api\Model\InvoiceVatItem>")
      * @JMS\SerializedName("VAT_ITEMS")
      */
     protected $vatItems = array();
@@ -487,7 +487,7 @@ class Invoice
      *
      * @var array
      *
-     * @JMS\Type("array<Speicher210\Fastbill\Api\Model\InvoiceItem>")
+     * @JMS\Type("array<Speicher210\Monsum\Api\Model\InvoiceItem>")
      * @JMS\SerializedName("ITEMS")
      */
     protected $items = array();

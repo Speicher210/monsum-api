@@ -1,30 +1,30 @@
 <?php
 
-namespace Speicher210\Fastbill\Api;
+namespace Speicher210\Monsum\Api;
 
 /**
- * Store the API credentials for fastbill API.
+ * Store the API credentials for Monsum API.
  *
- * @see Look for the account hash under hosted pages in fastbill dashboard settings.
+ * @see Look for the account hash under hosted pages in Monsum dashboard settings.
  */
 class ApiCredentials
 {
     /**
-     * The email for authentication to fastbill API.
+     * The email for authentication to Monsum API.
      *
      * @var string
      */
     protected $email;
 
     /**
-     * The API key for authentication to fastbill API.
+     * The API key for authentication to Monsum API.
      *
      * @var string
      */
     protected $apiKey;
 
     /**
-     * The Fastbill account hash.
+     * The Monsum account hash.
      *
      * @var string
      */
@@ -33,9 +33,9 @@ class ApiCredentials
     /**
      * Constructor.
      *
-     * @param string $email The email for authentication to fastbill API.
-     * @param string $apiKey The email for authentication to fastbill API.
-     * @param string $accountHash The Fastbill account hash.
+     * @param string $email The email for authentication to Monsum API.
+     * @param string $apiKey The email for authentication to Monsum API.
+     * @param string $accountHash The Monsum account hash.
      */
     public function __construct($email, $apiKey, $accountHash = null)
     {
@@ -45,7 +45,7 @@ class ApiCredentials
     }
 
     /**
-     * Get the email for authentication to fastbill API.
+     * Get the email for authentication to Monsum API.
      *
      * @return string
      */
@@ -55,7 +55,7 @@ class ApiCredentials
     }
 
     /**
-     * Get the API key for authentication to fastbill API.
+     * Get the API key for authentication to Monsum API.
      *
      * @return string
      */

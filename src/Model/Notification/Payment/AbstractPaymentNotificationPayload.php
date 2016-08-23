@@ -1,10 +1,10 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Model\Notification\Payment;
+namespace Speicher210\Monsum\Api\Model\Notification\Payment;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\Model\Notification\AbstractNotificationPayload;
-use Speicher210\Fastbill\Api\Model\Notification\Customer\Customer;
+use Speicher210\Monsum\Api\Model\Notification\AbstractNotificationPayload;
+use Speicher210\Monsum\Api\Model\Notification\Customer\Customer;
 
 /**
  * Abstract payment notification payload model.
@@ -16,7 +16,7 @@ abstract class AbstractPaymentNotificationPayload extends AbstractNotificationPa
      *
      * @var Customer
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Model\Notification\Customer\Customer")
+     * @JMS\Type("Speicher210\Monsum\Api\Model\Notification\Customer\Customer")
      * @JMS\SerializedName("customer")
      */
     protected $customer;
@@ -26,7 +26,7 @@ abstract class AbstractPaymentNotificationPayload extends AbstractNotificationPa
      *
      * @var PaymentSubscription
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Model\Notification\Payment\PaymentSubscription")
+     * @JMS\Type("Speicher210\Monsum\Api\Model\Notification\Payment\PaymentSubscription")
      * @JMS\SerializedName("subscription")
      */
     protected $subscription;
@@ -36,7 +36,7 @@ abstract class AbstractPaymentNotificationPayload extends AbstractNotificationPa
      *
      * @var Payment
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Model\Notification\Payment\Payment")
+     * @JMS\Type("Speicher210\Monsum\Api\Model\Notification\Payment\Payment")
      * @JMS\SerializedName("payment")
      */
     protected $payment;

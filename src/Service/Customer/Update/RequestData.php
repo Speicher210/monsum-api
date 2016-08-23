@@ -1,10 +1,10 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Customer\Update;
+namespace Speicher210\Monsum\Api\Service\Customer\Update;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractRequestData;
-use Speicher210\Fastbill\Api\Model\CustomerTrait;
+use Speicher210\Monsum\Api\AbstractRequestData;
+use Speicher210\Monsum\Api\Model\CustomerTrait;
 
 /**
  * The request for updating the customers.

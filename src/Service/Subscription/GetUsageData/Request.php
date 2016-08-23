@@ -1,10 +1,10 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Subscription\GetUsageData;
+namespace Speicher210\Monsum\Api\Service\Subscription\GetUsageData;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractRequest;
-use Speicher210\Fastbill\Api\GetRequestTrait;
+use Speicher210\Monsum\Api\AbstractRequest;
+use Speicher210\Monsum\Api\GetRequestTrait;
 
 /**
  * The request for getting usage data for a subscription.
@@ -18,7 +18,7 @@ class Request extends AbstractRequest
      *
      * @var array
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Service\Subscription\GetUsageData\RequestData")
+     * @JMS\Type("Speicher210\Monsum\Api\Service\Subscription\GetUsageData\RequestData")
      * @JMS\SerializedName("FILTER")
      */
     protected $filter;

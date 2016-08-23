@@ -1,8 +1,8 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Customer\AddCredits;
+namespace Speicher210\Monsum\Api\Service\Customer\AddCredits;
 
-use Speicher210\Fastbill\Api\AbstractResponse;
+use Speicher210\Monsum\Api\AbstractResponse;
 
 /**
  * Response when adding credits to the customers.

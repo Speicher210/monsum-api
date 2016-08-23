@@ -1,6 +1,6 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Model;
+namespace Speicher210\Monsum\Api\Model;
 
 use JMS\Serializer\Annotation as JMS;
 
@@ -122,7 +122,7 @@ trait SubscriptionTrait
     /**
      * @var SubscriptionPlanObject
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Model\SubscriptionPlanObject")
+     * @JMS\Type("Speicher210\Monsum\Api\Model\SubscriptionPlanObject")
      * @JMS\SerializedName("PLAN")
      */
     protected $plan;
@@ -188,7 +188,7 @@ trait SubscriptionTrait
     /**
      * @var SubscriptionPlanObject
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Model\SubscriptionPlanObject")
+     * @JMS\Type("Speicher210\Monsum\Api\Model\SubscriptionPlanObject")
      * @JMS\SerializedName("PLAN_UPCOMING")
      */
     protected $planUpcoming;

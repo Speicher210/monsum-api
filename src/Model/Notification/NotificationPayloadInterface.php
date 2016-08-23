@@ -1,6 +1,6 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Model\Notification;
+namespace Speicher210\Monsum\Api\Model\Notification;
 
 /**
  * Interface for notifications payload.

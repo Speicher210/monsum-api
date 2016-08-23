@@ -1,9 +1,9 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Customer\CreateSecureLink;
+namespace Speicher210\Monsum\Api\Service\Customer\CreateSecureLink;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractRequest;
+use Speicher210\Monsum\Api\AbstractRequest;
 
 /**
  * The request for creating secure links to account data and dashboard of the customer.
@@ -15,7 +15,7 @@ class Request extends AbstractRequest
      *
      * @var RequestData
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Service\Customer\CreateSecureLink\RequestData")
+     * @JMS\Type("Speicher210\Monsum\Api\Service\Customer\CreateSecureLink\RequestData")
      * @JMS\SerializedName("DATA")
      */
     protected $data;

@@ -1,10 +1,10 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Invoice\Get;
+namespace Speicher210\Monsum\Api\Service\Invoice\Get;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractRequest;
-use Speicher210\Fastbill\Api\GetRequestTrait;
+use Speicher210\Monsum\Api\AbstractRequest;
+use Speicher210\Monsum\Api\GetRequestTrait;
 
 /**
  * The request for getting the an invoice.
@@ -18,7 +18,7 @@ class Request extends AbstractRequest
      *
      * @var array
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Service\Invoice\Get\RequestData")
+     * @JMS\Type("Speicher210\Monsum\Api\Service\Invoice\Get\RequestData")
      * @JMS\SerializedName("FILTER")
      */
     protected $filter;

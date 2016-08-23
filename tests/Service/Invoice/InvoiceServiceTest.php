@@ -1,15 +1,15 @@
 <?php
 
-namespace Speicher210\Fastbill\Test\Api\Service\Invoice;
+namespace Speicher210\Monsum\Test\Api\Service\Invoice;
 
-use Speicher210\Fastbill\Api\Model\Invoice;
-use Speicher210\Fastbill\Api\Model\InvoiceItem;
-use Speicher210\Fastbill\Api\Model\InvoiceVatItem;
-use Speicher210\Fastbill\Api\Service\Invoice\Get\ApiResponse as GetApiResponse;
-use Speicher210\Fastbill\Api\Service\Invoice\Get\RequestData as GetRequestData;
-use Speicher210\Fastbill\Api\Service\Invoice\Get\Response as GetResponse;
-use Speicher210\Fastbill\Api\Service\Invoice\InvoiceService;
-use Speicher210\Fastbill\Test\Api\Service\AbstractServiceTest;
+use Speicher210\Monsum\Api\Model\Invoice;
+use Speicher210\Monsum\Api\Model\InvoiceItem;
+use Speicher210\Monsum\Api\Model\InvoiceVatItem;
+use Speicher210\Monsum\Api\Service\Invoice\Get\ApiResponse as GetApiResponse;
+use Speicher210\Monsum\Api\Service\Invoice\Get\RequestData as GetRequestData;
+use Speicher210\Monsum\Api\Service\Invoice\Get\Response as GetResponse;
+use Speicher210\Monsum\Api\Service\Invoice\InvoiceService;
+use Speicher210\Monsum\Test\Api\Service\AbstractServiceTest;
 
 /**
  * Test for the invoice service.
@@ -25,13 +25,13 @@ class InvoiceServiceTest extends AbstractServiceTest
         $data = new GetRequestData();
         $apiResponse = $invoiceService->getInvoices($data);
 
-        $this->assertInstanceOf(GetApiResponse::class, $apiResponse);
+        static::assertInstanceOf(GetApiResponse::class, $apiResponse);
         /** @var GetResponse $response */
         $response = $apiResponse->getResponse();
 
         $expectedInvoice = $this->getExpectedInvoice();
 
-        $this->assertEquals(array($expectedInvoice), $response->getInvoices());
+        static::assertEquals(array($expectedInvoice), $response->getInvoices());
     }
 
     public function testGetInvoicesWithDueDateWithoutTime()
@@ -42,14 +42,14 @@ class InvoiceServiceTest extends AbstractServiceTest
         $data = new GetRequestData();
         $apiResponse = $invoiceService->getInvoices($data);
 
-        $this->assertInstanceOf(GetApiResponse::class, $apiResponse);
+        static::assertInstanceOf(GetApiResponse::class, $apiResponse);
         /** @var GetResponse $response */
         $response = $apiResponse->getResponse();
 
         $expectedInvoice = $this->getExpectedInvoice();
         $expectedInvoice->setDueDate(new \DateTime('2015-11-04'));
 
-        $this->assertEquals(array($expectedInvoice), $response->getInvoices());
+        static::assertEquals(array($expectedInvoice), $response->getInvoices());
     }
 
     /**

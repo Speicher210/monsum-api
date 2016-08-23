@@ -1,9 +1,9 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Subscription\ChangeArticle;
+namespace Speicher210\Monsum\Api\Service\Subscription\ChangeArticle;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractApiResponse;
+use Speicher210\Monsum\Api\AbstractApiResponse;
 
 /**
  * API response when changing article of a subscription.
@@ -17,7 +17,7 @@ class ApiResponse extends AbstractApiResponse
      *
      * @var Request
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Service\Subscription\ChangeArticle\Request")
+     * @JMS\Type("Speicher210\Monsum\Api\Service\Subscription\ChangeArticle\Request")
      * @JMS\SerializedName("REQUEST")
      */
     protected $request;
@@ -27,7 +27,7 @@ class ApiResponse extends AbstractApiResponse
      *
      * @var array
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Service\Subscription\ChangeArticle\Response")
+     * @JMS\Type("Speicher210\Monsum\Api\Service\Subscription\ChangeArticle\Response")
      * @JMS\SerializedName("RESPONSE")
      */
     protected $response;

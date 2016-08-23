@@ -1,15 +1,15 @@
 <?php
 
-namespace Speicher210\Fastbill\Test\Api\Service\Coupon;
+namespace Speicher210\Monsum\Test\Api\Service\Coupon;
 
-use Speicher210\Fastbill\Api\Exception\ApiResponseException;
-use Speicher210\Fastbill\Api\Model\Coupon;
-use Speicher210\Fastbill\Api\Service\Coupon\Check\ApiResponse as CheckApiResponse;
-use Speicher210\Fastbill\Api\Service\Coupon\Check\Response as CheckResponse;
-use Speicher210\Fastbill\Api\Service\Coupon\CouponService;
-use Speicher210\Fastbill\Api\Service\Coupon\Get\ApiResponse as GetApiResponse;
-use Speicher210\Fastbill\Api\Service\Coupon\Get\Response as GetResponse;
-use Speicher210\Fastbill\Test\Api\Service\AbstractServiceTest;
+use Speicher210\Monsum\Api\Exception\ApiResponseException;
+use Speicher210\Monsum\Api\Model\Coupon;
+use Speicher210\Monsum\Api\Service\Coupon\Check\ApiResponse as CheckApiResponse;
+use Speicher210\Monsum\Api\Service\Coupon\Check\Response as CheckResponse;
+use Speicher210\Monsum\Api\Service\Coupon\CouponService;
+use Speicher210\Monsum\Api\Service\Coupon\Get\ApiResponse as GetApiResponse;
+use Speicher210\Monsum\Api\Service\Coupon\Get\Response as GetResponse;
+use Speicher210\Monsum\Test\Api\Service\AbstractServiceTest;
 
 /**
  * Test for the coupon service.
@@ -24,7 +24,7 @@ class CouponServiceTest extends AbstractServiceTest
 
         $apiResponse = $couponService->getCoupons('424258989');
 
-        $this->assertInstanceOf(GetApiResponse::class, $apiResponse);
+        static::assertInstanceOf(GetApiResponse::class, $apiResponse);
         /** @var GetResponse $response */
         $response = $apiResponse->getResponse();
 
@@ -59,7 +59,7 @@ class CouponServiceTest extends AbstractServiceTest
             ->setUsagesMax(0)
             ->setState(Coupon::COUPON_STATE_UNUSED);
 
-        $this->assertEquals(array($expectedCoupon1, $expectedCoupon2), $response->getCoupons());
+        static::assertEquals(array($expectedCoupon1, $expectedCoupon2), $response->getCoupons());
     }
 
     public function testCheckCoupon()
@@ -69,13 +69,13 @@ class CouponServiceTest extends AbstractServiceTest
 
         $apiResponse = $couponService->checkCoupon('424258989', 'ART_123');
 
-        $this->assertInstanceOf(CheckApiResponse::class, $apiResponse);
+        static::assertInstanceOf(CheckApiResponse::class, $apiResponse);
         /** @var CheckResponse $response */
         $response = $apiResponse->getResponse();
 
         $expectedCheckResponse = new CheckResponse();
         $expectedCheckResponse->setStatus(CheckResponse::STATUS_INVALID);
-        $this->assertEquals($expectedCheckResponse, $response);
+        static::assertEquals($expectedCheckResponse, $response);
     }
 
     public function testIsCouponValidForValidCoupon()
@@ -83,7 +83,7 @@ class CouponServiceTest extends AbstractServiceTest
         /** @var CouponService $couponService */
         $couponService = $this->getServiceToTest();
 
-        $this->assertTrue($couponService->isCouponValid('COUPON_VALID', 'ART_123'));
+        static::assertTrue($couponService->isCouponValid('COUPON_VALID', 'ART_123'));
     }
 
     public function testIsCouponValidForInvalidCoupon()
@@ -91,7 +91,7 @@ class CouponServiceTest extends AbstractServiceTest
         /** @var CouponService $couponService */
         $couponService = $this->getServiceToTest();
 
-        $this->assertFalse($couponService->isCouponValid('COUPON_INVALID', 'ART_123'));
+        static::assertFalse($couponService->isCouponValid('COUPON_INVALID', 'ART_123'));
     }
 
     public function testCheckCouponThrowsExceptionIfCodeIsValidAndArticleIsNotValid()

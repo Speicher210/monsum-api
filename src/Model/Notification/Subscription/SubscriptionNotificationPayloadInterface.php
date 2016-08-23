@@ -1,8 +1,8 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Model\Notification\Subscription;
+namespace Speicher210\Monsum\Api\Model\Notification\Subscription;
 
-use Speicher210\Fastbill\Api\Model\Notification\Customer\Customer;
+use Speicher210\Monsum\Api\Model\Notification\Customer\Customer;
 
 /**
  * Interface for subscription notifications payload.

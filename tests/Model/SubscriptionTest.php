@@ -1,7 +1,8 @@
 <?php
 
-namespace Speicher210\Fastbill\Test\Api\Model\Coupon;
-use Speicher210\Fastbill\Api\Model\Subscription;
+namespace Speicher210\Monsum\Test\Api\Model\Coupon;
+
+use Speicher210\Monsum\Api\Model\Subscription;
 
 /**
  * Test for the subscription model.
@@ -31,11 +32,11 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      * @param string $status The status.
      * @param boolean $expected The expected running status.
      */
-    function testSubscriptionRunning($status, $expected)
+    public function testSubscriptionRunning($status, $expected)
     {
         $subscription = new Subscription();
         $subscription->setStatus($status);
 
-        $this->assertSame($expected, $subscription->isRunning());
+        static::assertSame($expected, $subscription->isRunning());
     }
 }

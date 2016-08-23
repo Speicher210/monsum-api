@@ -1,9 +1,9 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Coupon\Get;
+namespace Speicher210\Monsum\Api\Service\Coupon\Get;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractResponse;
+use Speicher210\Monsum\Api\AbstractResponse;
 
 /**
  * Response when getting the coupons.
@@ -15,7 +15,7 @@ class Response extends AbstractResponse
      *
      * @var array
      *
-     * @JMS\Type("array<Speicher210\Fastbill\Api\Model\Coupon>")
+     * @JMS\Type("array<Speicher210\Monsum\Api\Model\Coupon>")
      * @JMS\SerializedName("COUPONS")
      */
     protected $coupons = array();
@@ -23,7 +23,7 @@ class Response extends AbstractResponse
     /**
      * Get the coupons from the response.
      *
-     * @return \Speicher210\Fastbill\Api\Model\Coupon[]
+     * @return \Speicher210\Monsum\Api\Model\Coupon[]
      */
     public function getCoupons()
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Serializer\Handler;
+namespace Speicher210\Monsum\Api\Serializer\Handler;
 
 use JMS\Serializer\Context;
 use JMS\Serializer\Handler\DateHandler as JMSDateHandler;
@@ -22,7 +22,7 @@ class DateHandler extends JMSDateHandler
      */
     public function serializeDateTime(VisitorInterface $visitor, \DateTime $date, array $type, Context $context)
     {
-        // All dates send to Fastbill should be in Europe/Berlin timezone.
+        // All dates send to Monsum should be in Europe/Berlin timezone.
         $date->setTimezone(new \DateTimeZone('Europe/Berlin'));
 
         return parent::serializeDateTime($visitor, $date, $type, $context);

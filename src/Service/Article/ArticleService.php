@@ -1,11 +1,11 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Article;
+namespace Speicher210\Monsum\Api\Service\Article;
 
-use Speicher210\Fastbill\Api\AbstractService;
-use Speicher210\Fastbill\Api\Model\Article;
-use Speicher210\Fastbill\Api\Model\Customer;
-use Speicher210\Fastbill\Api\Model\Subscription;
+use Speicher210\Monsum\Api\AbstractService;
+use Speicher210\Monsum\Api\Model\Article;
+use Speicher210\Monsum\Api\Model\Customer;
+use Speicher210\Monsum\Api\Model\Subscription;
 
 /**
  * Service for articles.

@@ -1,10 +1,10 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Model\Notification\Subscription;
+namespace Speicher210\Monsum\Api\Model\Notification\Subscription;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\Model\Notification\AbstractNotificationPayload;
-use Speicher210\Fastbill\Api\Model\Notification\Customer\Customer;
+use Speicher210\Monsum\Api\Model\Notification\AbstractNotificationPayload;
+use Speicher210\Monsum\Api\Model\Notification\Customer\Customer;
 
 /**
  * Abstract subscription notification payload model.
@@ -16,7 +16,7 @@ abstract class AbstractSubscriptionNotificationPayload extends AbstractNotificat
      *
      * @var Customer
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Model\Notification\Customer\Customer")
+     * @JMS\Type("Speicher210\Monsum\Api\Model\Notification\Customer\Customer")
      * @JMS\SerializedName("customer")
      */
     protected $customer;
@@ -26,7 +26,7 @@ abstract class AbstractSubscriptionNotificationPayload extends AbstractNotificat
      *
      * @var Subscription
      *
-     * @JMS\Type("Speicher210\Fastbill\Api\Model\Notification\Subscription\Subscription")
+     * @JMS\Type("Speicher210\Monsum\Api\Model\Notification\Subscription\Subscription")
      * @JMS\SerializedName("subscription")
      */
     protected $subscription;

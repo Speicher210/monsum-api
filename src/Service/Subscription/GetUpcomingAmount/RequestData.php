@@ -1,10 +1,10 @@
 <?php
 
-namespace Speicher210\Fastbill\Api\Service\Subscription\GetUpcomingAmount;
+namespace Speicher210\Monsum\Api\Service\Subscription\GetUpcomingAmount;
 
 use JMS\Serializer\Annotation as JMS;
-use Speicher210\Fastbill\Api\AbstractRequestData;
-use Speicher210\Fastbill\Api\Model\Addon;
+use Speicher210\Monsum\Api\AbstractRequestData;
+use Speicher210\Monsum\Api\Model\Addon;
 
 /**
  * The request for getting the upcoming amount.
@@ -46,7 +46,7 @@ final class RequestData extends AbstractRequestData
      *
      * @var array
      *
-     * @JMS\Type("array<Speicher210\Fastbill\Api\Model\Addon>")
+     * @JMS\Type("array<Speicher210\Monsum\Api\Model\Addon>")
      * @JMS\SerializedName("ADDONS")
      */
     protected $addons = array();
