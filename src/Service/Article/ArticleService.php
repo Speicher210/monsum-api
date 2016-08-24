@@ -62,7 +62,7 @@ class ArticleService extends AbstractService
             return $article->getCheckoutUrl();
         }
 
-        return $this->generateCheckoutURLForCustomer($customer->getCustomerId(), $article->getArticleNumber());
+        return $this->generateCheckoutURLForCustomer($customer->getHash(), $article->getArticleNumber());
     }
 
     /**
@@ -71,6 +71,7 @@ class ArticleService extends AbstractService
      * @param string $articleNumber Article number of the article to get the checkout URL.
      * @param Customer $customer The customer for which the checkout URL should be created.
      * @return string
+     * @throws \OutOfBoundsException If the article is not found.
      */
     public function getArticleNumberCheckoutURL($articleNumber, Customer $customer = null)
     {
@@ -99,16 +100,16 @@ class ArticleService extends AbstractService
     /**
      * Get the checkout URL of an article for a customer.
      *
-     * @param string $customerId The customer ID.
+     * @param string $customerHash The customer hash.
      * @param string $articleNumber The article number.
      * @return string
      */
-    protected function generateCheckoutURLForCustomer($customerId, $articleNumber)
+    protected function generateCheckoutURLForCustomer($customerHash, $articleNumber)
     {
         return sprintf(
             'https://app.monsum.com/checkout/0/%s/%s/%s',
             $this->transport->getCredentials()->getAccountHash(),
-            $customerId,
+            $customerHash,
             $articleNumber
         );
     }

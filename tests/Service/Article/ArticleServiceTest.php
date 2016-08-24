@@ -62,10 +62,10 @@ class ArticleServiceTest extends AbstractServiceTest
         $article = new Article();
         $article->setArticleNumber('1');
         $customer = new Customer();
-        $customer->setCustomerId(27);
+        $customer->setHash('customer_hash');
 
         static::assertSame(
-            'https://app.monsum.com/checkout/0/account-hash/27/1',
+            'https://app.monsum.com/checkout/0/account-hash/customer_hash/1',
             $articleService->getArticleCheckoutURL($article, $customer)
         );
     }
@@ -97,10 +97,10 @@ class ArticleServiceTest extends AbstractServiceTest
         $articleService = $this->getServiceToTest();
 
         $customer = new Customer();
-        $customer->setCustomerId(27);
+        $customer->setHash('customer_hash');
 
         static::assertSame(
-            'https://app.monsum.com/checkout/0/account-hash/27/1',
+            'https://app.monsum.com/checkout/0/account-hash/customer_hash/1',
             $articleService->getArticleNumberCheckoutURL('1', $customer)
         );
     }
