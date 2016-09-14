@@ -123,7 +123,7 @@ class ArticleService extends AbstractService
      */
     public function getSubscriptionProductChangeURL(Subscription $subscription, Article $article)
     {
-        return $this->generateSubscriptionProductChangeURL($subscription->getSubscriptionId(), $article->getArticleNumber());
+        return $this->generateSubscriptionProductChangeURL($subscription->getHash(), $article->getArticleNumber());
     }
 
     /**

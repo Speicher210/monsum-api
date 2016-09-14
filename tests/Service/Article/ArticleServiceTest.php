@@ -120,13 +120,13 @@ class ArticleServiceTest extends AbstractServiceTest
         $articleService = new ArticleService($transportMock, $serializerMock);
 
         $subscription = new Subscription();
-        $subscription->setSubscriptionId(72);
+        $subscription->setHash('subscription_hash');
 
         $article = new Article();
         $article->setArticleNumber('MY_PRODUCT');
 
         static::assertSame(
-            'https://app.monsum.com/change/account-hash/72/MY_PRODUCT',
+            'https://app.monsum.com/change/account-hash/subscription_hash/MY_PRODUCT',
             $articleService->getSubscriptionProductChangeURL($subscription, $article)
         );
     }

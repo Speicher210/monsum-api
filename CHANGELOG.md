@@ -2,6 +2,12 @@
 
 All Notable changes to `speicher210/monsum-api` will be documented in this file.
 
+## [1.0.2] - 2016-09-14
+
+### Fixed
+
+- Use the subscription hash for subscription product change URL.
+
 ## [1.0.1] - 2016-08-24
 
 ### Fixed
