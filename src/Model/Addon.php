@@ -127,6 +127,7 @@ class Addon
      *
      * @param integer $quantity The quantity.
      * @return $this
+     * @throws \InvalidArgumentException If the quantity is less than 1
      */
     public function setQuantity($quantity)
     {
@@ -222,6 +223,7 @@ class Addon
      *
      * @param float $vatPercent The VAT percentage.
      * @return $this
+     * @throws \InvalidArgumentException If the percent is not between 0 and 100
      */
     public function setVatPercent($vatPercent)
     {

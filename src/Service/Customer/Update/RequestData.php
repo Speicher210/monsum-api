@@ -47,7 +47,6 @@ final class RequestData extends AbstractRequestData
      * Set if the confirmation email should be suppressed.
      *
      * @param boolean $suppressEmail Flag if the confirmation email should be suppressed.
-     * @return RequestData
      */
     public function setSuppressEmail($suppressEmail)
     {

@@ -75,6 +75,6 @@ class Subscription
             self::SUBSCRIPTION_STATUS_TRIAL,
         );
 
-        return in_array($this->getStatus(), $runningStatuses);
+        return in_array($this->getStatus(), $runningStatuses, true);
     }
 }

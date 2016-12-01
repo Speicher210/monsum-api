@@ -466,6 +466,7 @@ trait ArticleTrait
      *
      * @param float $vatPercent The VAT percentage.
      * @return $this
+     * @throws \InvalidArgumentException If the percent is not between 0 and 100
      */
     public function setVatPercent($vatPercent)
     {

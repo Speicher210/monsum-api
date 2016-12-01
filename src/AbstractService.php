@@ -45,7 +45,7 @@ abstract class AbstractService implements ServiceInterface
      */
     protected function sendRequest(RequestInterface $request, $responseClass)
     {
-        if (!in_array(ApiResponseInterface::class, class_implements($responseClass))) {
+        if (!in_array(ApiResponseInterface::class, class_implements($responseClass), true)) {
             throw new \InvalidArgumentException('The response class must implement "'.ApiResponseInterface::class.'".');
         }
 

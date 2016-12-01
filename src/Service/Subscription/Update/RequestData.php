@@ -100,6 +100,8 @@ final class RequestData extends AbstractRequestData
     public function setSubscriptionId($subscriptionId)
     {
         $this->subscriptionId = $subscriptionId;
+
+        return $this;
     }
 
     /**
