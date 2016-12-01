@@ -19,29 +19,11 @@ use Speicher210\Monsum\Api\Transport\TransportInterface;
  */
 abstract class AbstractServiceTest extends \PHPUnit_Framework_TestCase
 {
-
-    /**
-     * The temporary directory for the serializer cache.
-     *
-     * @var string
-     */
-    private static $serializerTempDirectory;
-
-    /**
-     * {@inheritdoc}
-     */
-    public static function setUpBeforeClass()
-    {
-        if (self::$serializerTempDirectory === null) {
-            self::$serializerTempDirectory = sys_get_temp_dir().'/'.uniqid('sp210_monsum_api_test', true);
-        }
-    }
-
     public function testServiceThrowsExceptionsIfApiResponseHasErrors()
     {
         $class = $this->getClassUnderTest();
 
-        $responseMock = $this->getMock(ResponseInterface::class);
+        $responseMock = $this->createMock(ResponseInterface::class);
         $responseMock
             ->expects(static::once())
             ->method('hasErrors')
@@ -50,13 +32,13 @@ abstract class AbstractServiceTest extends \PHPUnit_Framework_TestCase
             ->expects(static::once())
             ->method('getErrors')
             ->willReturn(array());
-        $apiResponseMock = $this->getMock(ApiResponseInterface::class);
+        $apiResponseMock = $this->createMock(ApiResponseInterface::class);
         $apiResponseMock
             ->expects(static::exactly(3))
             ->method('getResponse')
             ->willReturn($responseMock);
-        $transportMock = $this->getMock(TransportInterface::class);
-        $serializerMock = $this->getMock(SerializerInterface::class);
+        $transportMock = $this->createMock(TransportInterface::class);
+        $serializerMock = $this->createMock(SerializerInterface::class);
         $serializerMock
             ->expects(static::once())
             ->method('deserialize')
@@ -64,12 +46,12 @@ abstract class AbstractServiceTest extends \PHPUnit_Framework_TestCase
 
         $service = new $class($transportMock, $serializerMock);
 
-        $requestMock = $this->getMock(RequestInterface::class);
+        $requestMock = $this->createMock(RequestInterface::class);
         $requestMock
             ->expects(static::once())
             ->method('getService')
             ->willReturn('test.service');
-        $responseClass = $this->getMock(ApiResponseInterface::class);
+        $responseClass = $this->createMock(ApiResponseInterface::class);
 
         $method = new \ReflectionMethod(get_class($service), 'sendRequest');
         $method->setAccessible(true);
@@ -103,7 +85,7 @@ abstract class AbstractServiceTest extends \PHPUnit_Framework_TestCase
 
         $apiCredentials = new ApiCredentials('email@test.com', 'api-key', 'account-hash');
 
-        $transportMock = $this->getMock(TransportInterface::class);
+        $transportMock = $this->createMock(TransportInterface::class);
         $transportMock
             ->expects(static::once())
             ->method('sendRequest')
@@ -117,7 +99,6 @@ abstract class AbstractServiceTest extends \PHPUnit_Framework_TestCase
         AnnotationRegistry::registerLoader('class_exists');
 
         $serializer = SerializerBuilder::create()
-            ->setCacheDir(self::$serializerTempDirectory)
             ->configureHandlers(
                 function (\JMS\Serializer\Handler\HandlerRegistry $registry) {
                     $registry->registerSubscribingHandler(new DateHandler());
@@ -126,8 +107,6 @@ abstract class AbstractServiceTest extends \PHPUnit_Framework_TestCase
             ->build();
 
         $class = $this->getClassUnderTest();
-        $service = new $class($transportMock, $serializer);
-
-        return $service;
+        return new $class($transportMock, $serializer);
     }
 }

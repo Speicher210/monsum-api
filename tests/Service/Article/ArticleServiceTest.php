@@ -21,7 +21,6 @@ use Speicher210\Monsum\Test\Api\Service\AbstractServiceTest;
  */
 class ArticleServiceTest extends AbstractServiceTest
 {
-
     public function testGetArticles()
     {
         /** @var ArticleService $articleService */
@@ -51,12 +50,12 @@ class ArticleServiceTest extends AbstractServiceTest
         $apiCredentials = new ApiCredentials('email@test.com', 'api-key', 'account-hash');
 
         /** @var ArticleService $articleService */
-        $transportMock = $this->getMock(TransportInterface::class);
+        $transportMock = $this->createMock(TransportInterface::class);
         $transportMock
             ->expects(static::any())
             ->method('getCredentials')
             ->willReturn($apiCredentials);
-        $serializerMock = $this->getMock(SerializerInterface::class);
+        $serializerMock = $this->createMock(SerializerInterface::class);
         $articleService = new ArticleService($transportMock, $serializerMock);
 
         $article = new Article();
@@ -111,12 +110,12 @@ class ArticleServiceTest extends AbstractServiceTest
         $apiCredentials = new ApiCredentials('email@test.com', 'api-key', 'account-hash');
 
         /** @var ArticleService $articleService */
-        $transportMock = $this->getMock(TransportInterface::class);
+        $transportMock = $this->createMock(TransportInterface::class);
         $transportMock
             ->expects(static::any())
             ->method('getCredentials')
             ->willReturn($apiCredentials);
-        $serializerMock = $this->getMock(SerializerInterface::class);
+        $serializerMock = $this->createMock(SerializerInterface::class);
         $articleService = new ArticleService($transportMock, $serializerMock);
 
         $subscription = new Subscription();
