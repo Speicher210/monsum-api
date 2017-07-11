@@ -36,9 +36,9 @@ class GuzzleTransport extends AbstractTransport
                     $this->apiCredentials->getEmail(),
                     $this->apiCredentials->getApiKey(),
                 ],
-                'headers' => array(
+                'headers' => [
                     'Content-Type' => 'application/json',
-                ),
+                ],
             ]
         );
     }

@@ -18,7 +18,7 @@ class Response extends AbstractResponse
      * @JMS\Type("array<Speicher210\Monsum\Api\Model\Coupon>")
      * @JMS\SerializedName("COUPONS")
      */
-    protected $coupons = array();
+    protected $coupons = [];
 
     /**
      * Get the coupons from the response.

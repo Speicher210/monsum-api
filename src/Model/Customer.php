@@ -2,8 +2,6 @@
 
 namespace Speicher210\Monsum\Api\Model;
 
-use JMS\Serializer\Annotation as JMS;
-
 /**
  * Customer model.
  */
@@ -58,6 +56,13 @@ class Customer
      */
     public function invoiceDeliveredByEmail()
     {
-        return $this->invoiceDeliveryMethod === self::INVOICE_DELIVERY_METHOD_MAIL || $this->invoiceDeliveryMethod === self::INVOICE_DELIVERY_METHOD_BOTH;
+        return in_array(
+            $this->invoiceDeliveryMethod,
+            [
+                self::INVOICE_DELIVERY_METHOD_MAIL,
+                self::INVOICE_DELIVERY_METHOD_BOTH
+            ],
+            true
+        );
     }
 }

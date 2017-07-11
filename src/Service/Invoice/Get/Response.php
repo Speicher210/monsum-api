@@ -18,7 +18,7 @@ class Response extends AbstractResponse
      * @JMS\Type("array<Speicher210\Monsum\Api\Model\Invoice>")
      * @JMS\SerializedName("INVOICES")
      */
-    protected $invoices = array();
+    protected $invoices = [];
 
     /**
      * Get the subscriptions from the response.

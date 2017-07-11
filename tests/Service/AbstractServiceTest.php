@@ -31,7 +31,7 @@ abstract class AbstractServiceTest extends \PHPUnit_Framework_TestCase
         $responseMock
             ->expects(static::once())
             ->method('getErrors')
-            ->willReturn(array());
+            ->willReturn([]);
         $apiResponseMock = $this->createMock(ApiResponseInterface::class);
         $apiResponseMock
             ->expects(static::exactly(3))

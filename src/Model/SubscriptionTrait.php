@@ -97,7 +97,7 @@ trait SubscriptionTrait
      * @JMS\Type("array")
      * @JMS\SerializedName("X_ATTRIBUTES")
      */
-    protected $xAttributes = array();
+    protected $xAttributes = [];
 
     /**
      * The subscription article number.

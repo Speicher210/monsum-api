@@ -59,7 +59,7 @@ final class RequestData extends AbstractRequestData
      * @JMS\Type("array")
      * @JMS\SerializedName("X_ATTRIBUTES")
      */
-    protected $xAttributes = array();
+    protected $xAttributes = [];
 
     /**
      * Product features.
@@ -69,7 +69,7 @@ final class RequestData extends AbstractRequestData
      * @JMS\Type("array<Speicher210\Monsum\Api\Model\Feature>")
      * @JMS\SerializedName("FEATURES")
      */
-    protected $features = array();
+    protected $features = [];
 
     /**
      * Constructor.

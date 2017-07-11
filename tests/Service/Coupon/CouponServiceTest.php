@@ -41,7 +41,7 @@ class CouponServiceTest extends AbstractServiceTest
             ->setUsagesMax(0)
             ->setUsages(2)
             ->setCampaign('sprint-summer-autumn-winter campaign')
-            ->setAssignedArticles(array(11, 666))
+            ->setAssignedArticles([11, 666])
             ->setValidFrom(new \DateTime('2015-10-21 00:00:00'))
             ->setValidTo(new \DateTime('2015-11-29 00:00:00'))
             ->setState(Coupon::COUPON_STATE_USED);
@@ -59,7 +59,7 @@ class CouponServiceTest extends AbstractServiceTest
             ->setUsagesMax(0)
             ->setState(Coupon::COUPON_STATE_UNUSED);
 
-        static::assertEquals(array($expectedCoupon1, $expectedCoupon2), $response->getCoupons());
+        static::assertEquals([$expectedCoupon1, $expectedCoupon2], $response->getCoupons());
     }
 
     public function testCheckCoupon()

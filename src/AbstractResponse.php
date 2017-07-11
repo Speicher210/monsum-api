@@ -17,7 +17,7 @@ class AbstractResponse implements ResponseInterface
      * @JMS\SerializedName("ERRORS")
      * @JMS\Type("array<string, string>")
      */
-    protected $errors = array();
+    protected $errors = [];
 
     /**
      * The status of the entity created / updated.

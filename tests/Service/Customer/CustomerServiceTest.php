@@ -43,7 +43,7 @@ class CustomerServiceTest extends AbstractServiceTest
         $expectedCustomer1 = $this->getCustomerForTesting($expectedCustomer1, 1);
         $expectedCustomer2 = new Customer();
         $expectedCustomer2 = $this->getCustomerForTesting($expectedCustomer2, 2);
-        static::assertEquals(array($expectedCustomer1, $expectedCustomer2), $response->getCustomers());
+        static::assertEquals([$expectedCustomer1, $expectedCustomer2], $response->getCustomers());
     }
 
     public function testGetCustomer()
@@ -236,7 +236,7 @@ class CustomerServiceTest extends AbstractServiceTest
             ->setCreditBalance('1,00')
             ->setInvoiceDeliveryMethod(Customer::INVOICE_DELIVERY_METHOD_MAIL)
             ->setComment('are you talking to me?' . $identifier)
-            ->setTags(array('tag1' . $identifier, 'tag2' . $identifier))
+            ->setTags(['tag1' . $identifier, 'tag2' . $identifier])
             ->setChangeDataUrl('https://test.com/change-data/' . $identifier)
             ->setDashboardUrl('https://test.com/dashboard/' . $identifier);
 

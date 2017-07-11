@@ -120,7 +120,7 @@ final class RequestData extends AbstractRequestData
      * @JMS\Type("array<Speicher210\Monsum\Api\Model\Feature>")
      * @JMS\SerializedName("FEATURES")
      */
-    protected $features = array();
+    protected $features = [];
 
     /**
      * Flag if suppress confirmation mail to customer.

@@ -18,7 +18,7 @@ class Response extends AbstractResponse
      * @JMS\Type("array<Speicher210\Monsum\Api\Model\Article>")
      * @JMS\SerializedName("ARTICLES")
      */
-    protected $articles = array();
+    protected $articles = [];
 
     /**
      * Get the articles from the response.

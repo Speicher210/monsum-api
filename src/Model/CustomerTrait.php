@@ -1179,7 +1179,7 @@ trait CustomerTrait
      */
     public function getFullName()
     {
-        return implode(' ', array($this->firstName, $this->lastName));
+        return implode(' ', [$this->firstName, $this->lastName]);
     }
 
     /**

@@ -31,7 +31,7 @@ class InvoiceServiceTest extends AbstractServiceTest
 
         $expectedInvoice = $this->getExpectedInvoice();
 
-        static::assertEquals(array($expectedInvoice), $response->getInvoices());
+        static::assertEquals([$expectedInvoice], $response->getInvoices());
     }
 
     public function testGetInvoicesWithDueDateWithoutTime()
@@ -49,7 +49,7 @@ class InvoiceServiceTest extends AbstractServiceTest
         $expectedInvoice = $this->getExpectedInvoice();
         $expectedInvoice->setDueDate(new \DateTime('2015-11-04'));
 
-        static::assertEquals(array($expectedInvoice), $response->getInvoices());
+        static::assertEquals([$expectedInvoice], $response->getInvoices());
     }
 
     /**
@@ -65,7 +65,8 @@ class InvoiceServiceTest extends AbstractServiceTest
      *
      * @return Invoice
      */
-    private function getExpectedInvoice(){
+    private function getExpectedInvoice()
+    {
         $expectedInvoice = new Invoice();
         $expectedInvoice->setInvoiceId(2345);
         $expectedInvoice->setInvoiceExternalId('');

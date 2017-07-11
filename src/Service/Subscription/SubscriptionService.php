@@ -82,8 +82,8 @@ class SubscriptionService extends AbstractService
         $nextEvent = null,
         $subscriptionExternalId = null,
         $status = null,
-        array $xAttributes = array(),
-        array $features = array()
+        array $xAttributes = [],
+        array $features = []
     ) {
         $requestData = new Update\RequestData($subscriptionId);
 

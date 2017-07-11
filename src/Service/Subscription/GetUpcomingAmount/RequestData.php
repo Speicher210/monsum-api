@@ -49,7 +49,7 @@ final class RequestData extends AbstractRequestData
      * @JMS\Type("array<Speicher210\Monsum\Api\Model\Addon>")
      * @JMS\SerializedName("ADDONS")
      */
-    protected $addons = array();
+    protected $addons = [];
 
     /**
      * Get the article number.

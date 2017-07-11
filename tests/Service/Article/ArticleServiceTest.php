@@ -31,7 +31,7 @@ class ArticleServiceTest extends AbstractServiceTest
         /** @var GetResponse $response */
         $response = $apiResponse->getResponse();
 
-        static::assertEquals(array($this->getExpectedArticle()), $response->getArticles());
+        static::assertEquals([$this->getExpectedArticle()], $response->getArticles());
     }
 
     public function testGetArticle()
@@ -141,7 +141,7 @@ class ArticleServiceTest extends AbstractServiceTest
         $expectedArticle->setArticleNumber(1);
         $expectedArticle->setTitle('Article test');
         $expectedArticle->setDescription('Article test description');
-        $expectedArticle->setTags(array('tag1', 'tag2'));
+        $expectedArticle->setTags(['tag1', 'tag2']);
         $expectedArticle->setIsAddon(false);
         $expectedArticle->setTranslation(
             (new Translation())

@@ -217,7 +217,7 @@ trait ArticleTrait
      * @JMS\Type("array<Speicher210\Monsum\Api\Model\Feature>")
      * @JMS\SerializedName("FEATURES")
      */
-    protected $features = array();
+    protected $features = [];
 
     /**
      * Get the article number.

@@ -107,7 +107,7 @@ class SubscriptionServiceTest extends AbstractServiceTest
         $expectedSubscription2->setCustomerId(2);
         $expectedSubscription2->setSubscriptionTitle('sub 2');
         $expectedSubscription2->setCancellationDate(new \DateTime('2016-01-28 15:56:25'));
-        static::assertEquals(array($expectedSubscription1, $expectedSubscription2), $response->getSubscriptions());
+        static::assertEquals([$expectedSubscription1, $expectedSubscription2], $response->getSubscriptions());
     }
 
     public function testGetSubscriptionsWithoutCancellationDate()
@@ -132,7 +132,7 @@ class SubscriptionServiceTest extends AbstractServiceTest
         $expectedSubscription->setCustomerId(995443);
         $expectedSubscription->setSubscriptionTitle('title');
 
-        static::assertEquals(array($expectedSubscription), $response->getSubscriptions());
+        static::assertEquals([$expectedSubscription], $response->getSubscriptions());
     }
 
     public function testCreateSubscription()
@@ -245,7 +245,6 @@ class SubscriptionServiceTest extends AbstractServiceTest
         $expectedSetSubscriptionAddonResponse->setStatus('success');
 
         static::assertEquals($expectedSetSubscriptionAddonResponse, $response);
-
     }
 
     public function testSetSubscriptionUsageData()

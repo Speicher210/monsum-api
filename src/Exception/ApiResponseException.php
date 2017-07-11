@@ -12,7 +12,7 @@ class ApiResponseException extends \RuntimeException
      *
      * @var array
      */
-    protected $errors = array();
+    protected $errors = [];
 
     /**
      * Constructor.
@@ -22,7 +22,7 @@ class ApiResponseException extends \RuntimeException
      * @param \Exception $previous Previous exception.
      * @param integer $code The error code.
      */
-    public function __construct($message, array $errors = array(), \Exception $previous = null, $code = 0)
+    public function __construct($message, array $errors = [], \Exception $previous = null, $code = 0)
     {
         parent::__construct($message, $code, $previous);
 

@@ -480,7 +480,7 @@ class Invoice
      * @JMS\Type("array<Speicher210\Monsum\Api\Model\InvoiceVatItem>")
      * @JMS\SerializedName("VAT_ITEMS")
      */
-    protected $vatItems = array();
+    protected $vatItems = [];
 
     /**
      * List of the items
@@ -490,7 +490,7 @@ class Invoice
      * @JMS\Type("array<Speicher210\Monsum\Api\Model\InvoiceItem>")
      * @JMS\SerializedName("ITEMS")
      */
-    protected $items = array();
+    protected $items = [];
 
     /**
      * The total.
@@ -530,7 +530,7 @@ class Invoice
      * @JMS\Type("array")
      * @JMS\SerializedName("SHIPMENTS")
      */
-    protected $shipments = array();
+    protected $shipments = [];
 
     /**
      * The PayPal url.

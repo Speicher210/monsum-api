@@ -24,7 +24,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 ## Testing
 
 ``` bash
-$ vendor/bin/phpunit
+$ composer test
 ```
 
 ## Contributing

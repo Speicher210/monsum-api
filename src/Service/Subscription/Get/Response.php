@@ -18,7 +18,7 @@ class Response extends AbstractResponse
      * @JMS\Type("array<Speicher210\Monsum\Api\Model\Subscription>")
      * @JMS\SerializedName("SUBSCRIPTIONS")
      */
-    protected $subscriptions = array();
+    protected $subscriptions = [];
 
     /**
      * Get the subscriptions from the response.

@@ -62,7 +62,7 @@ class Subscription
     {
         $this->coupon = $coupon;
     }
-    
+
     /**
      * Check if the current subscription is running.
      *
@@ -70,10 +70,10 @@ class Subscription
      */
     public function isRunning()
     {
-        $runningStatuses = array(
+        $runningStatuses = [
             self::SUBSCRIPTION_STATUS_ACTIVE,
             self::SUBSCRIPTION_STATUS_TRIAL,
-        );
+        ];
 
         return in_array($this->getStatus(), $runningStatuses, true);
     }
