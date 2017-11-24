@@ -2,6 +2,12 @@
 
 All Notable changes to `speicher210/monsum-api` will be documented in this file.
 
+## [1.0.4] - 2017-11-24
+
+### Added
+
+- `VAT` and `TAX` ID on customer notification payload.
+
 ## [1.0.3] - 2017-07-12
 
 ### Fixed

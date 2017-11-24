@@ -60,6 +60,26 @@ class Customer
     protected $companyName;
 
     /**
+     * The VAT identification number of the customer.
+     *
+     * @var string
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("vat_id")
+     */
+    protected $vatId;
+
+    /**
+     * Tax ID of the customer.
+     *
+     * @var string
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("tax_id")
+     */
+    protected $taxId;
+
+    /**
      * The academic title of the customer.
      *
      * @var string
@@ -148,6 +168,16 @@ class Customer
      * @JMS\SerializedName("country_code")
      */
     protected $countryCode;
+
+    /**
+     * The language code of the customer.
+     *
+     * @var string
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("language_code")
+     */
+    protected $languageCode;
 
     /**
      * The email address of the customer.
@@ -295,6 +325,52 @@ class Customer
     public function setCompanyName($companyName)
     {
         $this->companyName = $companyName;
+
+        return $this;
+    }
+
+    /**
+     * Get the VAT ID.
+     *
+     * @return string
+     */
+    public function getVatId()
+    {
+        return $this->vatId;
+    }
+
+    /**
+     * Set the VAT ID.
+     *
+     * @param string $vatId The VAT ID.
+     * @return $this
+     */
+    public function setVatId($vatId)
+    {
+        $this->vatId = $vatId;
+
+        return $this;
+    }
+
+    /**
+     * Get the tax ID.
+     *
+     * @return string
+     */
+    public function getTaxId()
+    {
+        return $this->taxId;
+    }
+
+    /**
+     * Set the tax ID.
+     *
+     * @param string $taxId The tax ID.
+     * @return $this
+     */
+    public function setTaxId($taxId)
+    {
+        $this->taxId = $taxId;
 
         return $this;
     }
@@ -502,6 +578,29 @@ class Customer
     public function setCountryCode($countryCode)
     {
         $this->countryCode = $countryCode;
+
+        return $this;
+    }
+
+    /**
+     * Get the language code.
+     *
+     * @return string
+     */
+    public function getLanguageCode()
+    {
+        return $this->languageCode;
+    }
+
+    /**
+     * Set the language code.
+     *
+     * @param string $languageCode The language code.
+     * @return $this
+     */
+    public function setLanguageCode($languageCode)
+    {
+        $this->languageCode = $languageCode;
 
         return $this;
     }
