@@ -5,6 +5,7 @@ namespace Speicher210\Monsum\Api\Service\Article;
 use Speicher210\Monsum\Api\AbstractService;
 use Speicher210\Monsum\Api\Model\Article;
 use Speicher210\Monsum\Api\Model\Customer;
+use Speicher210\Monsum\Api\Model\CustomerQueryParams;
 use Speicher210\Monsum\Api\Model\Subscription;
 
 /**
@@ -63,6 +64,18 @@ class ArticleService extends AbstractService
         }
 
         return $this->generateCheckoutURLForCustomer($customer->getHash(), $article->getArticleNumber());
+    }
+
+    /**
+     * Get the article checkout URL with customer query params.
+     *
+     * @param Article $article The article.
+     * @param CustomerQueryParams $params The customer query params
+     * @return string
+     */
+    public function getArticleCheckoutUrlWithQueryParams(Article $article, CustomerQueryParams $params)
+    {
+        return $article->getCheckoutUrl() . (string)$params;
     }
 
     /**

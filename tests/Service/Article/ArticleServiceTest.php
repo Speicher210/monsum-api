@@ -6,6 +6,7 @@ use JMS\Serializer\SerializerInterface;
 use Speicher210\Monsum\Api\ApiCredentials;
 use Speicher210\Monsum\Api\Model\Article;
 use Speicher210\Monsum\Api\Model\Customer;
+use Speicher210\Monsum\Api\Model\CustomerQueryParams;
 use Speicher210\Monsum\Api\Model\Feature;
 use Speicher210\Monsum\Api\Model\Subscription;
 use Speicher210\Monsum\Api\Model\Translation;
@@ -66,6 +67,44 @@ class ArticleServiceTest extends AbstractServiceTest
         static::assertSame(
             'https://app.monsum.com/checkout/0/account-hash/customer_hash/1',
             $articleService->getArticleCheckoutURL($article, $customer)
+        );
+    }
+
+    public function testGetArticleCheckoutURLReturnsTheURLWithCustomerQueryParams()
+    {
+        $apiCredentials = new ApiCredentials('email@test.com', 'api-key', 'account-hash');
+
+        /** @var ArticleService $articleService */
+        $transportMock = $this->createMock(TransportInterface::class);
+        $transportMock
+            ->expects(static::any())
+            ->method('getCredentials')
+            ->willReturn($apiCredentials);
+        $serializerMock = $this->createMock(SerializerInterface::class);
+        $articleService = new ArticleService($transportMock, $serializerMock);
+
+        $article = new Article();
+        $article->setCheckoutUrl('https://app.monsum.com/checkout/0/account-hash/1');
+
+        // Test with all params present.
+        $customerQueryParams = $this->getCustomerQueryParams(1);
+        static::assertSame(
+            'https://app.monsum.com/checkout/0/account-hash/1&address_line1=Spaldingstrasse+2101&affiliate=together1&city=Hamburg1&company=My+company+1&country=DE&customer_ext_uid=e1&email=test1%40test.com&first-name=Testing1&lang=de&last-name=Tester1&salutation=Salut1&title_academic=Prof.1&vatid=vat_id1&postal-code=1',
+            $articleService->getArticleCheckoutUrlWithQueryParams($article, $customerQueryParams)
+        );
+
+        // Test with only one param present.
+        $customerQueryParams = new CustomerQueryParams();
+        $customerQueryParams->setAddress('my address');
+        static::assertSame(
+            'https://app.monsum.com/checkout/0/account-hash/1&address_line1=my+address',
+            $articleService->getArticleCheckoutUrlWithQueryParams($article, $customerQueryParams)
+        );
+
+        // Test with no parameters.
+        static::assertSame(
+            'https://app.monsum.com/checkout/0/account-hash/1',
+            $articleService->getArticleCheckoutUrlWithQueryParams($article, new CustomerQueryParams())
         );
     }
 
@@ -170,6 +209,29 @@ class ArticleServiceTest extends AbstractServiceTest
         );
 
         return $expectedArticle;
+    }
+
+    private function getCustomerQueryParams($identifier)
+    {
+        $customerQueryParams = new CustomerQueryParams();
+        $customerQueryParams
+            ->setAddress('some address')
+            ->setAddress('Spaldingstrasse 210' . $identifier)
+            ->setAffiliate('together' . $identifier)
+            ->setCity('Hamburg' . $identifier)
+            ->setCompanyName('My company ' . $identifier)
+            ->setCountryCode('DE')
+            ->setCustomerExternalUid('e' . $identifier)
+            ->setEmail('test' . $identifier . '@test.com')
+            ->setFirstName('Testing' . $identifier)
+            ->setLanguageCode('de')
+            ->setLastName('Tester' . $identifier)
+            ->setSalutation('Salut' . $identifier)
+            ->setTitleAcademic('Prof.' . $identifier)
+            ->setVatId('vat_id' . $identifier)
+            ->setZipCode($identifier);
+
+        return $customerQueryParams;
     }
 
     /**
