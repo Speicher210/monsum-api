@@ -9,6 +9,7 @@ use Speicher210\Monsum\Api\Model\Customer;
 use Speicher210\Monsum\Api\Model\CustomerQueryParams;
 use Speicher210\Monsum\Api\Model\Feature;
 use Speicher210\Monsum\Api\Model\Subscription;
+use Speicher210\Monsum\Api\Model\SubscriptionQueryParams;
 use Speicher210\Monsum\Api\Model\Translation;
 use Speicher210\Monsum\Api\Model\TranslationText;
 use Speicher210\Monsum\Api\Service\Article\ArticleService;
@@ -88,23 +89,32 @@ class ArticleServiceTest extends AbstractServiceTest
 
         // Test with all params present.
         $customerQueryParams = $this->getCustomerQueryParams(1);
+        $subscriptionQueryParams = $this->getSubscriptionQueryParams(1);
         static::assertSame(
-            'https://app.monsum.com/checkout/0/account-hash/1&address_line1=Spaldingstrasse+2101&affiliate=together1&city=Hamburg1&company=My+company+1&country=DE&customer_ext_uid=e1&email=test1%40test.com&first-name=Testing1&lang=de&last-name=Tester1&salutation=Salut1&title_academic=Prof.1&vatid=vat_id1&postal-code=1',
-            $articleService->getArticleCheckoutUrlWithQueryParams($article, $customerQueryParams)
+            'https://app.monsum.com/checkout/0/account-hash/1&address_line1=Spaldingstrasse+2101&affiliate=together1&city=Hamburg1&company=My+company+1&country=DE&customer_ext_uid=e1&email=test1%40test.com&first-name=Testing1&lang=de&last-name=Tester1&salutation=Salut1&title_academic=Prof.1&vatid=vat_id1&postal-code=1&subscription_ext_uid=my-custom-id-1&subscription_title=Title+1&start=2018-05-18+11%3A18%3A01',
+            $articleService->getArticleCheckoutUrlWithQueryParams($article, $customerQueryParams, $subscriptionQueryParams)
         );
 
-        // Test with only one param present.
+        // Test with only one customer param present.
         $customerQueryParams = new CustomerQueryParams();
         $customerQueryParams->setAddress('my address');
         static::assertSame(
             'https://app.monsum.com/checkout/0/account-hash/1&address_line1=my+address',
-            $articleService->getArticleCheckoutUrlWithQueryParams($article, $customerQueryParams)
+            $articleService->getArticleCheckoutUrlWithQueryParams($article, $customerQueryParams, new SubscriptionQueryParams())
+        );
+
+        // Test with only one subscription param present.
+        $subscriptionQueryParams = new SubscriptionQueryParams();
+        $subscriptionQueryParams->setSubscriptionExternalId('123');
+        static::assertSame(
+            'https://app.monsum.com/checkout/0/account-hash/1&subscription_ext_uid=123',
+            $articleService->getArticleCheckoutUrlWithQueryParams($article, new CustomerQueryParams(), $subscriptionQueryParams)
         );
 
         // Test with no parameters.
         static::assertSame(
             'https://app.monsum.com/checkout/0/account-hash/1',
-            $articleService->getArticleCheckoutUrlWithQueryParams($article, new CustomerQueryParams())
+            $articleService->getArticleCheckoutUrlWithQueryParams($article, new CustomerQueryParams(), new SubscriptionQueryParams())
         );
     }
 
@@ -232,6 +242,17 @@ class ArticleServiceTest extends AbstractServiceTest
             ->setZipCode($identifier);
 
         return $customerQueryParams;
+    }
+
+    private function getSubscriptionQueryParams($identifier)
+    {
+        $subscriptionQueryParams = new SubscriptionQueryParams();
+        $subscriptionQueryParams
+            ->setSubscriptionExternalId('my-custom-id-' . $identifier)
+            ->setSubscriptionStart(new \DateTime(sprintf('2018-05-18 11:18:%02d', $identifier)))
+            ->setSubscriptionTitle('Title ' . $identifier);
+
+        return $subscriptionQueryParams;
     }
 
     /**

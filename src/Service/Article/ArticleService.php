@@ -7,6 +7,7 @@ use Speicher210\Monsum\Api\Model\Article;
 use Speicher210\Monsum\Api\Model\Customer;
 use Speicher210\Monsum\Api\Model\CustomerQueryParams;
 use Speicher210\Monsum\Api\Model\Subscription;
+use Speicher210\Monsum\Api\Model\SubscriptionQueryParams;
 
 /**
  * Service for articles.
@@ -67,15 +68,19 @@ class ArticleService extends AbstractService
     }
 
     /**
-     * Get the article checkout URL with customer query params.
+     * Get the article checkout URL with query params.
      *
      * @param Article $article The article.
-     * @param CustomerQueryParams $params The customer query params
+     * @param CustomerQueryParams $customerQueryParams
+     * @param SubscriptionQueryParams $subscriptionQueryParams
      * @return string
      */
-    public function getArticleCheckoutUrlWithQueryParams(Article $article, CustomerQueryParams $params)
-    {
-        return $article->getCheckoutUrl() . (string)$params;
+    public function getArticleCheckoutUrlWithQueryParams(
+        Article $article,
+        CustomerQueryParams $customerQueryParams,
+        SubscriptionQueryParams $subscriptionQueryParams
+    ) {
+        return $article->getCheckoutUrl() . (string)$customerQueryParams . (string)$subscriptionQueryParams;
     }
 
     /**
