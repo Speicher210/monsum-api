@@ -55,32 +55,23 @@ class ArticleService extends AbstractService
      * Get the article checkout URL.
      *
      * @param Article $article The article.
-     * @param Customer|null $customer The customer.
+     * @param Customer|null $customer The customer for which the checkout URL should be created.
+     * @param CustomerQueryParams|null $customerQueryParams Additional query params for customer data. If $customer is passed query params will be ignored.
+     * @param SubscriptionQueryParams|null $subscriptionQueryParams Additional query params for subscription data.
      * @return string
      */
-    public function getArticleCheckoutURL(Article $article, Customer $customer = null)
-    {
+    public function getArticleCheckoutURL(
+        Article $article,
+        Customer $customer = null,
+        CustomerQueryParams $customerQueryParams = null,
+        SubscriptionQueryParams $subscriptionQueryParams = null
+    ) {
         if ($customer === null) {
-            return $article->getCheckoutUrl();
+            return $article->getCheckoutUrl() . (string)$customerQueryParams . (string)$subscriptionQueryParams;
         }
 
-        return $this->generateCheckoutURLForCustomer($customer->getHash(), $article->getArticleNumber());
-    }
-
-    /**
-     * Get the article checkout URL with query params.
-     *
-     * @param Article $article The article.
-     * @param CustomerQueryParams $customerQueryParams
-     * @param SubscriptionQueryParams $subscriptionQueryParams
-     * @return string
-     */
-    public function getArticleCheckoutUrlWithQueryParams(
-        Article $article,
-        CustomerQueryParams $customerQueryParams,
-        SubscriptionQueryParams $subscriptionQueryParams
-    ) {
-        return $article->getCheckoutUrl() . (string)$customerQueryParams . (string)$subscriptionQueryParams;
+        // If Customer is passed then we do not pass customer query params because the value from customer always takes precedence.
+        return $this->generateCheckoutURLForCustomer($customer->getHash(), $article->getArticleNumber()) . (string)$subscriptionQueryParams;
     }
 
     /**

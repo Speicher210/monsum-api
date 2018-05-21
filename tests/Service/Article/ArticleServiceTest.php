@@ -71,7 +71,7 @@ class ArticleServiceTest extends AbstractServiceTest
         );
     }
 
-    public function testGetArticleCheckoutURLReturnsTheURLWithCustomerQueryParams()
+    public function testGetArticleCheckoutURLReturnsTheURLWithQueryParams()
     {
         $apiCredentials = new ApiCredentials('email@test.com', 'api-key', 'account-hash');
 
@@ -92,7 +92,7 @@ class ArticleServiceTest extends AbstractServiceTest
         $subscriptionQueryParams = $this->getSubscriptionQueryParams(1);
         static::assertSame(
             'https://app.monsum.com/checkout/0/account-hash/1&address_line1=Spaldingstrasse+2101&affiliate=together1&city=Hamburg1&company=My+company+1&country=DE&customer_ext_uid=e1&email=test1%40test.com&first-name=Testing1&lang=de&last-name=Tester1&salutation=Salut1&title_academic=Prof.1&vatid=vat_id1&postal-code=1&subscription_ext_uid=my-custom-id-1&subscription_title=Title+1&start=2018-05-18+11%3A18%3A01',
-            $articleService->getArticleCheckoutUrlWithQueryParams($article, $customerQueryParams, $subscriptionQueryParams)
+            $articleService->getArticleCheckoutURL($article, null, $customerQueryParams, $subscriptionQueryParams)
         );
 
         // Test with only one customer param present.
@@ -100,7 +100,7 @@ class ArticleServiceTest extends AbstractServiceTest
         $customerQueryParams->setAddress('my address');
         static::assertSame(
             'https://app.monsum.com/checkout/0/account-hash/1&address_line1=my+address',
-            $articleService->getArticleCheckoutUrlWithQueryParams($article, $customerQueryParams, new SubscriptionQueryParams())
+            $articleService->getArticleCheckoutURL($article, null, $customerQueryParams, new SubscriptionQueryParams())
         );
 
         // Test with only one subscription param present.
@@ -108,13 +108,37 @@ class ArticleServiceTest extends AbstractServiceTest
         $subscriptionQueryParams->setSubscriptionExternalId('123');
         static::assertSame(
             'https://app.monsum.com/checkout/0/account-hash/1&subscription_ext_uid=123',
-            $articleService->getArticleCheckoutUrlWithQueryParams($article, new CustomerQueryParams(), $subscriptionQueryParams)
+            $articleService->getArticleCheckoutURL($article, null, new CustomerQueryParams(), $subscriptionQueryParams)
         );
 
         // Test with no parameters.
         static::assertSame(
             'https://app.monsum.com/checkout/0/account-hash/1',
-            $articleService->getArticleCheckoutUrlWithQueryParams($article, new CustomerQueryParams(), new SubscriptionQueryParams())
+            $articleService->getArticleCheckoutURL($article, null, new CustomerQueryParams(), new SubscriptionQueryParams())
+        );
+    }
+
+    public function testGetArticleNumberCheckoutURLIgnoresCustomerQueryParamsIfCustomerIsPassed()
+    {
+        $apiCredentials = new ApiCredentials('email@test.com', 'api-key', 'account-hash');
+
+        /** @var ArticleService $articleService */
+        $transportMock = $this->createMock(TransportInterface::class);
+        $transportMock
+            ->expects(static::any())
+            ->method('getCredentials')
+            ->willReturn($apiCredentials);
+        $serializerMock = $this->createMock(SerializerInterface::class);
+        $articleService = new ArticleService($transportMock, $serializerMock);
+
+        $article = new Article();
+        $article->setArticleNumber('1');
+        $customer = new Customer();
+        $customer->setHash('customer_hash');
+
+        static::assertSame(
+            'https://app.monsum.com/checkout/0/account-hash/customer_hash/1',
+            $articleService->getArticleCheckoutURL($article, $customer, $this->getCustomerQueryParams(1))
         );
     }
 
