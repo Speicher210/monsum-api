@@ -1,0 +1,21 @@
+{
+  "REQUEST": {
+    "SERVICE": "subscription.get",
+    "FILTER": [],
+    "LIMIT": 100
+  },
+  "RESPONSE": {
+    "SUBSCRIPTIONS": [
+      {
+        "SUBSCRIPTION_ID": 100,
+        "CUSTOMER_ID": 1,
+        "SUBSCRIPTION_TITLE": "sub 1"
+      },
+      {
+        "SUBSCRIPTION_ID": 101,
+        "CUSTOMER_ID": 2,
+        "SUBSCRIPTION_TITLE": "sub 2"
+      }
+    ]
+  }
+}

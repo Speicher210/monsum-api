@@ -7,6 +7,7 @@ All Notable changes to `speicher210/monsum-api` will be documented in this file.
 ### Added
 
 - option to pass customer and subscription query params for article checkout URL.
+- method to get all subscriptions
 
 ## [1.0.4] - 2017-11-24
 

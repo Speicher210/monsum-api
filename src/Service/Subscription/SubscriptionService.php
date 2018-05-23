@@ -5,6 +5,7 @@ namespace Speicher210\Monsum\Api\Service\Subscription;
 use Speicher210\Monsum\Api\AbstractService;
 use Speicher210\Monsum\Api\Model\Feature;
 use Speicher210\Monsum\Api\Model\Subscription;
+use Speicher210\Monsum\Api\RequestInterface;
 
 /**
  * Service for subscriptions.
@@ -51,6 +52,29 @@ class SubscriptionService extends AbstractService
         $request = new Get\Request($requestData);
 
         return $this->sendRequest($request, Get\ApiResponse::class);
+    }
+
+    /**
+     * Get all subscriptions.
+     *
+     * @return Subscription[]
+     */
+    public function getAllSubscriptions()
+    {
+        $limit = RequestInterface::MAX_LIST_LIMIT;
+        $offset = 0;
+        $subscriptions = [[]];
+
+        while (true) {
+            $subscriptionBatch = $this->getSubscriptionsResponse($offset);
+            $subscriptions[] = $subscriptionBatch;
+            $offset += $limit;
+            if (\count($subscriptionBatch) < $limit) {
+                break;
+            }
+        }
+
+        return \array_merge(...$subscriptions);
     }
 
     /**
@@ -267,5 +291,19 @@ class SubscriptionService extends AbstractService
         $request = new Reactivate\Request($requestData);
 
         return $this->sendRequest($request, Reactivate\ApiResponse::class);
+    }
+
+    /**
+     * @param int $offset
+     * @return Subscription[]
+     */
+    private function getSubscriptionsResponse($offset)
+    {
+        $request = new Get\Request(new Get\RequestData());
+        $request->setOffset($offset);
+        /** @var Get\ApiResponse $response */
+        $response = $this->sendRequest($request, Get\ApiResponse::class);
+
+        return $response->getResponse()->getSubscriptions();
     }
 }

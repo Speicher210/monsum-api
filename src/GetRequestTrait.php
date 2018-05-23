@@ -17,7 +17,7 @@ trait GetRequestTrait
      * @JMS\Type("integer")
      * @JMS\SerializedName("LIMIT")
      */
-    protected $limit = 100;
+    protected $limit = RequestInterface::MAX_LIST_LIMIT;
 
     /**
      * The offset for the request.

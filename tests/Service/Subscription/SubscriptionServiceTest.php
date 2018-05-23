@@ -135,6 +135,24 @@ class SubscriptionServiceTest extends AbstractServiceTest
         static::assertEquals([$expectedSubscription], $response->getSubscriptions());
     }
 
+    public function testGetAllSubscriptions()
+    {
+        /** @var SubscriptionService $subscriptionService */
+        $subscriptionService = $this->getServiceToTest();
+
+        $subscriptions = $subscriptionService->getAllSubscriptions();
+
+        $expectedSubscription1 = new Subscription();
+        $expectedSubscription1->setSubscriptionId(100);
+        $expectedSubscription1->setCustomerId(1);
+        $expectedSubscription1->setSubscriptionTitle('sub 1');
+        $expectedSubscription2 = new Subscription();
+        $expectedSubscription2->setSubscriptionId(101);
+        $expectedSubscription2->setCustomerId(2);
+        $expectedSubscription2->setSubscriptionTitle('sub 2');
+        static::assertEquals([$expectedSubscription1, $expectedSubscription2], $subscriptions);
+    }
+
     public function testCreateSubscription()
     {
         /** @var SubscriptionService $subscriptionService */
