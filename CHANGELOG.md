@@ -2,7 +2,7 @@
 
 All Notable changes to `speicher210/monsum-api` will be documented in this file.
 
-## [1.0.5] - 2018-xx-xx
+## [1.0.5] - 2018-05-25
 
 ### Added
 
