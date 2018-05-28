@@ -90,8 +90,12 @@ class ArticleServiceTest extends AbstractServiceTest
         // Test with all params present.
         $customerQueryParams = $this->getCustomerQueryParams(1);
         $subscriptionQueryParams = $this->getSubscriptionQueryParams(1);
+        $expectedUrl = 'https://app.monsum.com/checkout/0/account-hash/1';
+        $expectedUrl .= '&address_line1=Spaldingstrasse+2101&affiliate=together1&city=Hamburg1&company=My+company+1&country=DE&customer_ext_uid=e1&email=test1%40test.com';
+        $expectedUrl .= '&first-name=Testing1&lang=de&last-name=Tester1&salutation=Salut1&title_academic=Prof.1&vatid=vat_id1&postal-code=1';
+        $expectedUrl .= '&subscription_ext_uid=my-custom-id-1&subscription_title=Title+1&start=2018-05-18+11%3A18%3A01';
         static::assertSame(
-            'https://app.monsum.com/checkout/0/account-hash/1&address_line1=Spaldingstrasse+2101&affiliate=together1&city=Hamburg1&company=My+company+1&country=DE&customer_ext_uid=e1&email=test1%40test.com&first-name=Testing1&lang=de&last-name=Tester1&salutation=Salut1&title_academic=Prof.1&vatid=vat_id1&postal-code=1&subscription_ext_uid=my-custom-id-1&subscription_title=Title+1&start=2018-05-18+11%3A18%3A01',
+            $expectedUrl,
             $articleService->getArticleCheckoutURL($article, null, $customerQueryParams, $subscriptionQueryParams)
         );
 
